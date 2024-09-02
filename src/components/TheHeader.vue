@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import logo from '@/assets/logo.svg'
+import TheMobileMenu from '@/components/TheMobileMenu.vue'
 </script>
 
 <template>
@@ -14,9 +15,13 @@ import logo from '@/assets/logo.svg'
       <a class="header-menu_link" href="#">Новости</a>
       <a class="header-menu_link-button" href="#">Выбрать свою квартиру</a>
     </div>
-    <a class="header-phone" href="#">
-      +7 (495) 185-13-82
-    </a>
+    <div class="header-phone-inner">
+      <a class="header-phone" href="#">
+        +7 (495) 185-13-82
+      </a>
+    </div>
+
+    <TheMobileMenu />
   </header>
 </template>
 
@@ -24,11 +29,11 @@ import logo from '@/assets/logo.svg'
 header {
   position: relative;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   height: 80px;
   border: 1px solid var(--black);
-  background: var(--black);
-  padding: 0 70px;
+  background: var(--primary-background);
+  padding: 0 25px;
   align-items: center;
 }
 
@@ -73,22 +78,27 @@ header {
   text-transform: uppercase;
   text-align: center;
   justify-content: center;
+
 }
 
 .header-phone {
   display: none;
   font-family: 'Gotham Pro', serif;
   font-style: normal;
-  font-weight: 400;
   font-size: 24px;
+  font-weight: 600;
   line-height: 20px;
   color: var(--white);
   opacity: 0.8;
   justify-content: end;
   text-decoration: none;
   transition: color 0.2s ease-in-out;
+  width: fit-content;
 }
-
+.header-phone-inner {
+  display: none;
+  justify-content: end;
+}
 .header-phone:hover {
   color: var(--primary-link);
 }
@@ -106,6 +116,8 @@ header {
 @media (min-width: 1280px) {
   header {
     height: 107px;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 0 70px;
   }
 
   .header-menu {
@@ -118,6 +130,9 @@ header {
 
   .header-logo img {
     width: auto;
+  }
+  .header-phone-inner {
+    display: flex;
   }
 }
 </style>

@@ -13,7 +13,8 @@
     "lint:fix": "eslint . --fix"
   },
   "dependencies": {
-    "vue": "^3.4.29"
+    "vue": "^3.4.29",
+    "vue3-carousel": "^0.3.3"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^3.0.0",

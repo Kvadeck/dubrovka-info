@@ -1,15 +1,10 @@
 :root {
   --white: #ffffff;
   --black: #181818;
-  --primary-link: #e8c896;
+  --primary-background: #2F2620;
+  --primary-link: #E8C896;
   --primary-gradient: #DAB57B;
   --secondary-gradient: #C29A5C;
-
-  --breakpoint-sm: 480px;
-  --breakpoint-md: 768px;
-  --breakpoint-lg: 1024px;
-  --breakpoint-xl: 1200px;
-  --breakpoint-xxl: 1500px;
 }
 
 *,
