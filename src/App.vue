@@ -2,8 +2,8 @@
 import TheHeader from '@/components/TheHeader.vue'
 import TheInformation from '@/components/main-screen/TheInformation.vue'
 import TheSlider from '@/components/main-screen/TheSlider.vue'
-import TheBottomText from "@/components/main-screen/TheBottomText.vue";
-import TheCountOfSlides from "@/components/main-screen/TheCountOfSlides.vue";
+import TheBottomText from '@/components/main-screen/TheBottomText.vue'
+import TheCountOfSlides from '@/components/main-screen/TheCountOfSlides.vue'
 </script>
 
 <template>
@@ -13,8 +13,8 @@ import TheCountOfSlides from "@/components/main-screen/TheCountOfSlides.vue";
     <TheSlider />
 
     <div class="bottom-inner">
-      <TheBottomText/>
-      <TheCountOfSlides/>
+      <TheBottomText />
+      <TheCountOfSlides />
     </div>
   </div>
 </template>
@@ -43,6 +43,4 @@ import TheCountOfSlides from "@/components/main-screen/TheCountOfSlides.vue";
   margin-top: -70px;
   justify-content: space-between;
 }
-
-
 </style>

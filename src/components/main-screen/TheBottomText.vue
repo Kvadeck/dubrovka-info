@@ -3,9 +3,9 @@
 </script>
 
 <template>
-<div class="bottom-text">
-  Квартиры и пентхаусы<br>бизнес-класса
-</div>
+  <div class="bottom-text">
+    Квартиры и пентхаусы<br>бизнес-класса
+  </div>
 </template>
 
 <style scoped>

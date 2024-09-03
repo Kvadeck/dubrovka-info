@@ -10,14 +10,14 @@ import 'vue3-carousel/dist/carousel.css'
 <template>
   <div class="carousel-wrapper">
     <Carousel>
-      <Slide class="carousel__item" :key="0">
-          <img :src="Slide1" alt="slide-1">
+      <Slide :key="0" class="carousel__item">
+        <img :src="Slide1" alt="slide-1">
       </Slide>
-      <Slide class="carousel__item" :key="1">
-          <img :src="Slide2" alt="slide-2">
+      <Slide :key="1" class="carousel__item">
+        <img :src="Slide2" alt="slide-2">
       </Slide>
-      <Slide class="carousel__item" :key="2">
-          <img :src="Slide3" alt="slide-3">
+      <Slide :key="2" class="carousel__item">
+        <img :src="Slide3" alt="slide-3">
       </Slide>
       <template #addons>
         <Navigation>
