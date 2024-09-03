@@ -1,1 +1,1 @@
-![preview]( "src/assets/img/readme/preview.png")
+![preview]( "./src/assets/img/readme/preview.png")
