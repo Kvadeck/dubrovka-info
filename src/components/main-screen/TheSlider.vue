@@ -1,30 +1,23 @@
-<script setup>
-import Slide1 from "../assets/slide_1.jpg"
-import Slide2 from "../assets/slide_2.jpg"
-import Slide3 from "../assets/slide_3.jpg"
-import {Carousel, Navigation, Slide} from 'vue3-carousel'
-import Arrow from '../assets/arrow.svg'
+<script setup lang="ts">
+import { Carousel, Navigation, Slide } from 'vue3-carousel'
+import Slide1 from '@/assets/img/slide1.jpg'
+import Slide2 from '@/assets/img/slide2.jpg'
+import Slide3 from '@/assets/img/slide3.jpg'
+import Arrow from '@/assets/img/arrow.svg'
 import 'vue3-carousel/dist/carousel.css'
-
 </script>
 
 <template>
   <div class="carousel-wrapper">
     <Carousel>
-      <Slide :key="0">
-        <div class="carousel__item">
-          <img :src="Slide1" alt="slide-2">
-        </div>
+      <Slide class="carousel__item" :key="0">
+          <img :src="Slide1" alt="slide-1">
       </Slide>
-      <Slide :key="1">
-        <div class="carousel__item">
+      <Slide class="carousel__item" :key="1">
           <img :src="Slide2" alt="slide-2">
-        </div>
       </Slide>
-      <Slide :key="2">
-        <div class="carousel__item">
-          <img :src="Slide3" alt="slide-2">
-        </div>
+      <Slide class="carousel__item" :key="2">
+          <img :src="Slide3" alt="slide-3">
       </Slide>
       <template #addons>
         <Navigation>
@@ -34,7 +27,7 @@ import 'vue3-carousel/dist/carousel.css'
             </span>
           </template>
           <template #prev>
-             <span>
+            <span>
               <img class="prev-arrow" :src="Arrow" alt="arrow_prev">
             </span>
           </template>

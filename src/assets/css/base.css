@@ -1,0 +1,43 @@
+:root {
+  --white: #ffffff;
+  --black: #181818;
+  --primary-background: #392314;
+  --secondary-background: #543E30;
+  --primary-link: #E8C896;
+  --primary-gradient: #DAB57B;
+  --secondary-gradient: #C29A5C;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: 'Cormorant_Garamond';
+  src: url('@/assets/fonts/CormorantGaramond.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Gotham Pro';
+  src: url('@/assets/fonts/GothamPro.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+html {
+  scroll-behavior: smooth;
+  background-color: var(--primary-background);
+}
+body {
+  min-height: 100vh;
+  line-height: 1.6;
+  font-family: 'Gotham Pro', serif, sans-serif;
+  font-size: 16px;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

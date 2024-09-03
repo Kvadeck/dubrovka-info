@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import logo from '@/assets/logo.svg'
+import logo from '@/assets/img/logo.svg'
 import TheMobileMenu from '@/components/TheMobileMenu.vue'
 </script>
 
@@ -9,18 +9,17 @@ import TheMobileMenu from '@/components/TheMobileMenu.vue'
       <a href=""><img :src="logo" alt="logo"></a>
     </div>
     <div class="header-menu">
-      <a class="header-menu_link" href="#">О проекте</a>
-      <a class="header-menu_link" href="#">Каталог</a>
-      <a class="header-menu_link" href="#">Галерея</a>
-      <a class="header-menu_link" href="#">Новости</a>
-      <a class="header-menu_link-button" href="#">Выбрать свою квартиру</a>
+      <a class="header-menu-link" href="#">О проекте</a>
+      <a class="header-menu-link" href="#">Каталог</a>
+      <a class="header-menu-link" href="#">Галерея</a>
+      <a class="header-menu-link" href="#">Новости</a>
+      <a class="header-menu-link-button" href="#">Выбрать свою квартиру</a>
     </div>
     <div class="header-phone-inner">
       <a class="header-phone" href="#">
         +7 (495) 185-13-82
       </a>
     </div>
-
     <TheMobileMenu />
   </header>
 </template>
@@ -31,8 +30,7 @@ header {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   height: 80px;
-  border: 1px solid var(--black);
-  background: var(--primary-background);
+  border-bottom: 1px solid var(--white);
   padding: 0 25px;
   align-items: center;
 }
@@ -48,8 +46,7 @@ header {
   display: none;
 }
 
-.header-menu_link {
-  font-family: 'Gotham Pro', serif;
+.header-menu-link {
   font-size: 18px;
   line-height: 27px;
   opacity: 0.8;
@@ -60,11 +57,11 @@ header {
   transition: color 0.2s ease-in-out;
 }
 
-.header-menu_link:hover {
+.header-menu-link:hover {
   color: var(--primary-link);
 }
 
-.header-menu_link-button {
+.header-menu-link-button {
   padding: 12px 24px;
   gap: 12px;
   width: 300px;
@@ -83,8 +80,6 @@ header {
 
 .header-phone {
   display: none;
-  font-family: 'Gotham Pro', serif;
-  font-style: normal;
   font-size: 24px;
   font-weight: 600;
   line-height: 20px;
@@ -108,7 +103,7 @@ header {
     gap: 53px;
   }
 
-  .header-menu_link-button {
+  .header-menu-link-button {
     width: 373px;
   }
 }

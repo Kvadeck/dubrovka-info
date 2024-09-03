@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import mark from '@/assets/mark.svg'
-import the360 from '@/assets/360.svg'
-import document from '@/assets/document.svg'
-import metro from '@/assets/metro.svg'
+import mark from '@/assets/img/mark.svg'
+import the360 from '@/assets/img/360.svg'
+import document from '@/assets/img/document.svg'
+import metro from '@/assets/img/metro.svg'
 </script>
 
 <template>
@@ -30,8 +30,9 @@ import metro from '@/assets/metro.svg'
 
 <style scoped>
 .information-wrapper {
+  position: relative;
   justify-content: space-between;
-  padding: 40px 70px;
+  padding: 35px 70px;
   flex-wrap: wrap;
   display: none;
 }
@@ -57,7 +58,6 @@ import metro from '@/assets/metro.svg'
 }
 
 .address-point-text {
-  font-family: 'Gotham Pro', serif;
   font-style: normal;
   font-weight: 400;
   font-size: 24px;
@@ -68,9 +68,6 @@ import metro from '@/assets/metro.svg'
 }
 
 .additional-text {
-  font-family: 'Gotham Pro', serif;
-  font-style: normal;
-  font-weight: 400;
   font-size: 18px;
   line-height: 24px;
   color: var(--white);

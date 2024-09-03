@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref } from 'vue'
-import mobileLogo from '@/assets/mobileMenu.svg'
-import cross from '@/assets/cross.svg'
+import mobileLogo from '@/assets/img/mobileMenu.svg'
+import cross from '@/assets/img/cross.svg'
 
 const isPanelOpen = ref(false)
 
@@ -33,6 +33,9 @@ function togglePanel() {
 </template>
 
 <style scoped>
+.cross {
+  cursor: pointer;
+}
 .cross img {
   width: 20px;
   right: 25px;
@@ -70,7 +73,6 @@ function togglePanel() {
   left: 0;
 }
 .mobile-menu_link {
-  font-family: 'Gotham Pro',serif;
   font-size: 24px;
   line-height: 27px;
   text-transform: uppercase;
@@ -88,11 +90,9 @@ function togglePanel() {
 .mobile-menu_link-button {
   padding: 18px 24px;
   gap: 12px;
-  width: 250px;
   height: 40px;
   background: linear-gradient(180deg, var(--primary-gradient) 0%, var(--secondary-gradient) 100%);
   border-radius: 60px;
-  font-family: 'Gotham Pro',serif;
   font-size: 18px;
   line-height: 0;
   text-transform: uppercase;
@@ -103,7 +103,6 @@ function togglePanel() {
   justify-content: center;
 }
 .mobile-menu-phone {
-  font-family: 'Gotham Pro', serif;
   font-size: 24px;
   line-height: 8px;
   color: var(--white);
