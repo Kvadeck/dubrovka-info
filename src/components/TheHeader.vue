@@ -89,6 +89,7 @@ header {
   text-decoration: none;
   transition: color 0.2s ease-in-out;
   width: fit-content;
+  white-space: nowrap;
 }
 .header-phone-inner {
   display: none;

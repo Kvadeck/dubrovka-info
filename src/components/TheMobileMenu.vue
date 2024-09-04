@@ -2,6 +2,7 @@
 import { ref } from 'vue'
 import mobileLogo from '@/assets/img/mobileMenu.svg'
 import cross from '@/assets/img/cross.svg'
+import ChooseFlatButton from '@/components/UI/ChooseFlatButton.vue'
 
 const isPanelOpen = ref(false)
 
@@ -26,7 +27,7 @@ function togglePanel() {
       <a class="mobile-menu_link" href="#">Каталог</a>
       <a class="mobile-menu_link" href="#">Галерея</a>
       <a class="mobile-menu_link" href="#">Новости</a>
-      <a class="mobile-menu_link-button" href="#">Выбрать квартиру</a>
+      <ChooseFlatButton />
       <a class="mobile-menu-phone" href="#">+7 (495) 185-13-82</a>
     </div>
   </div>
@@ -87,21 +88,7 @@ function togglePanel() {
   text-align: center;
   gap: 22px;
 }
-.mobile-menu_link-button {
-  padding: 18px 24px;
-  gap: 12px;
-  height: 40px;
-  background: linear-gradient(180deg, var(--primary-gradient) 0%, var(--secondary-gradient) 100%);
-  border-radius: 60px;
-  font-size: 18px;
-  line-height: 0;
-  text-transform: uppercase;
-  color: var(--white);
-  text-decoration: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+
 .mobile-menu-phone {
   font-size: 24px;
   line-height: 8px;

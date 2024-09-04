@@ -1,15 +1,19 @@
 <script setup lang="ts">
+import ComfortPlans from '@/components/main-screen/ComfortPlans.vue'
+export interface TheCountOfSlidesProps {
+  slide: number
+}
+const props = defineProps<TheCountOfSlidesProps>()
 
 </script>
 
 <template>
   <div class="count-of-slides">
-    <div class="count-text">
-      Комфортные<br>
-      планировки
+    <div class="comfort-plans-inner">
+      <ComfortPlans />
     </div>
     <div class="count-numbers">
-      1/3
+      {{props.slide}}/3
     </div>
   </div>
 </template>
@@ -18,13 +22,14 @@
 .count-of-slides {
   position: relative;
   display: flex;
-  align-items: end;
+  align-items: center;
   gap: 27px;
 }
-
-.count-text, .count-numbers {
-  font-size: 28px;
-  line-height: 47px;
+.comfort-plans-inner {
+  display: block;
+}
+.count-numbers {
+  font-size: 16px;
   display: flex;
   align-items: center;
   text-transform: uppercase;
@@ -35,8 +40,19 @@
   text-fill-color: transparent;
 }
 @media (min-width: 1500px) {
-  .count-text, .count-numbers {
+  .count-of-slides {
+    align-items: end;
+  }
+}
+@media (min-width: 1280px) {
+  .count-numbers {
     font-size: 36px;
+    line-height: 40px;
+  }
+}
+@media (max-width: 768px) {
+  .comfort-plans-inner {
+    display: none;
   }
 }
 </style>
