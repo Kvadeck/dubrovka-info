@@ -1,12 +1,13 @@
 <script setup lang="ts">
 import AddressLink from '@/components/main/AddressLink.vue'
 import AdditionalLinks from '@/components/main/AdditionalLinks.vue'
-import {useActiveBreakpoint} from "@/composables/useActiveBreakpoint";
-const {activeBreakpoint} = useActiveBreakpoint()
+import { useActiveBreakpoint } from '@/composables/useActiveBreakpoint'
+
+const { activeBreakpoint } = useActiveBreakpoint()
 </script>
 
 <template>
-  <div class="after-header-links" v-if="activeBreakpoint === 'lg'">
+  <div v-if="activeBreakpoint === 'lg'" class="after-header-links">
     <AddressLink />
     <AdditionalLinks />
   </div>

@@ -3,14 +3,14 @@ import AddressLink from '@/components/main/AddressLink.vue'
 import AdditionalLinks from '@/components/main/AdditionalLinks.vue'
 import ComfortPlans from '@/components/main/ComfortPlansText.vue'
 import ChooseFlatButton from '@/components/UI/ChooseFlatButton.vue'
-import {useActiveBreakpoint} from "@/composables/useActiveBreakpoint";
-const {activeBreakpoint} = useActiveBreakpoint()
+import { useActiveBreakpoint } from '@/composables/useActiveBreakpoint'
 
+const { activeBreakpoint } = useActiveBreakpoint()
 </script>
 
 <template>
   <div>
-    <div class="address-point-inner" v-if="activeBreakpoint === 'md'">
+    <div v-if="activeBreakpoint === 'md'" class="address-point-inner">
       <AddressLink />
     </div>
     <span class="room-and-penthouse-text">
@@ -22,7 +22,7 @@ const {activeBreakpoint} = useActiveBreakpoint()
     <div class="choose-flat-button-inner">
       <ChooseFlatButton />
     </div>
-    <div class="additional-links-inner" v-if="activeBreakpoint !== 'lg'">
+    <div v-if="activeBreakpoint !== 'lg'" class="additional-links-inner">
       <AdditionalLinks />
     </div>
   </div>

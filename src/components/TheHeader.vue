@@ -1,8 +1,9 @@
 <script setup lang="ts">
 import logo from '@/assets/img/logo.svg'
 import TheMobileMenu from '@/components/TheMobileMenu.vue'
-import {useActiveBreakpoint} from "@/composables/useActiveBreakpoint";
-const {activeBreakpoint} = useActiveBreakpoint()
+import { useActiveBreakpoint } from '@/composables/useActiveBreakpoint'
+
+const { activeBreakpoint } = useActiveBreakpoint()
 </script>
 
 <template>
