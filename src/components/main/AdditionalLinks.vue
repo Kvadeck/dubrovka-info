@@ -5,16 +5,16 @@ import metro from '@/assets/img/metro.svg'
 </script>
 
 <template>
-  <div class="additional-points">
-    <div class="additional-points-inner">
+  <div class="additional-links">
+    <div class="additional-links-inner">
       <img class="address-point-mark" :src="the360" alt="360_icon">
       <span class="additional-text">Панорама 360</span>
     </div>
-    <div class="additional-points-inner">
+    <div class="additional-links-inner">
       <img class="address-point-mark" :src="document" alt="document_icon">
       <span class="additional-text">Буклет</span>
     </div>
-    <div class="additional-points-inner">
+    <div class="additional-links-inner">
       <img class="address-point-mark" :src="metro" alt="mark_icon">
       <span class="address-point-text">Ольховая</span>
     </div>
@@ -22,12 +22,12 @@ import metro from '@/assets/img/metro.svg'
 </template>
 
 <style scoped>
-.additional-points {
+.additional-links {
   display: flex;
   gap: 40px;
   flex-wrap: wrap;
 }
-.additional-points-inner {
+.additional-links-inner {
   display: flex;
   gap: 10px;
   align-items: center;
@@ -51,7 +51,7 @@ import metro from '@/assets/img/metro.svg'
   white-space: nowrap;
 }
 @media (max-width: 768px) {
-  .additional-points {
+  .additional-links {
     gap: 25px;
   }
 }

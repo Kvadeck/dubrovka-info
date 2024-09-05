@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import logo from '@/assets/img/logo.svg'
 import TheMobileMenu from '@/components/TheMobileMenu.vue'
+import {useActiveBreakpoint} from "@/composables/useActiveBreakpoint";
+const {activeBreakpoint} = useActiveBreakpoint()
 </script>
 
 <template>
@@ -20,7 +22,7 @@ import TheMobileMenu from '@/components/TheMobileMenu.vue'
         +7 (495) 185-13-82
       </a>
     </div>
-    <TheMobileMenu />
+    <TheMobileMenu v-if="activeBreakpoint !== 'lg'" />
   </header>
 </template>
 
@@ -31,7 +33,7 @@ header {
   grid-template-columns: repeat(2, 1fr);
   height: 80px;
   border-bottom: 1px solid var(--white);
-  padding: 0 25px;
+  padding: 0 30px;
   align-items: center;
 }
 

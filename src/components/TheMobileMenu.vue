@@ -64,11 +64,12 @@ function togglePanel() {
   left: -300px;
   width: 300px;
   height: 100%;
-  background-color: var(--primary-background);
-  color: white;
+  background-color: var(--mobile-background);
+  color: var(--white);
   padding: 20px;
-  transition: left .3s ease-in-out;
+  transition: left .5s ease-in-out;
   z-index: 9;
+  background-image: url('@/assets/img/background.png');
 }
 .side-panel-open {
   left: 0;
@@ -88,7 +89,6 @@ function togglePanel() {
   text-align: center;
   gap: 22px;
 }
-
 .mobile-menu-phone {
   font-size: 24px;
   line-height: 8px;
@@ -96,19 +96,5 @@ function togglePanel() {
   opacity: 0.8;
   text-decoration: none;
   margin-top: 16px;
-}
-@media (min-width: 1280px) {
-  .header-mobile-logo {
-   display: none;
-  }
-  .mobile-menu {
-    display: none;
-  }
-  .side-panel {
-    display: none;
-  }
-  .overlay {
-    display: none;
-  }
 }
 </style>

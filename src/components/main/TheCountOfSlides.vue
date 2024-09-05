@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import ComfortPlans from '@/components/main-screen/ComfortPlans.vue'
+import ComfortPlans from '@/components/main/ComfortPlansText.vue'
+
 export interface TheCountOfSlidesProps {
   slide: number
 }
 const props = defineProps<TheCountOfSlidesProps>()
-
 </script>
 
 <template>
@@ -13,7 +13,7 @@ const props = defineProps<TheCountOfSlidesProps>()
       <ComfortPlans />
     </div>
     <div class="count-numbers">
-      {{props.slide}}/3
+      {{ props.slide }}/3
     </div>
   </div>
 </template>

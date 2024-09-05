@@ -13,24 +13,14 @@ import ImageDefault from '@/assets/img/slides/image-default.jpg'
 
 import Arrow from '@/assets/img/arrow.svg'
 import 'vue3-carousel/dist/carousel.css'
-import {ref} from "vue";
-
-const currentSlide = ref(0)
-
-export interface slideEndData {
-  currentSlideIndex: number,
-  prevSlideIndex: number,
-  slidesCount: number
-}
 
 const emit = defineEmits<{
   getCurrentSlide: [slide: number]
 }>()
 
-function handleSlideEnd(data: slideEndData) {
+function handleSlideEnd(data: { currentSlideIndex: number }) {
   emit('getCurrentSlide', data.currentSlideIndex)
 }
-
 </script>
 
 <template>
@@ -74,7 +64,6 @@ function handleSlideEnd(data: slideEndData) {
         </Navigation>
       </template>
     </Carousel>
-
   </div>
 </template>
 

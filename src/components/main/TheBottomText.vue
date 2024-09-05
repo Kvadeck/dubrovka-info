@@ -1,14 +1,17 @@
 <script setup lang="ts">
-import AddressPoint from '@/components/main-screen/AddressPoint.vue'
-import AdditionalPoints from '@/components/main-screen/AdditionalPoints.vue'
-import ComfortPlans from '@/components/main-screen/ComfortPlans.vue'
+import AddressLink from '@/components/main/AddressLink.vue'
+import AdditionalLinks from '@/components/main/AdditionalLinks.vue'
+import ComfortPlans from '@/components/main/ComfortPlansText.vue'
 import ChooseFlatButton from '@/components/UI/ChooseFlatButton.vue'
+import {useActiveBreakpoint} from "@/composables/useActiveBreakpoint";
+const {activeBreakpoint} = useActiveBreakpoint()
+
 </script>
 
 <template>
   <div>
-    <div class="address-point-inner">
-      <AddressPoint />
+    <div class="address-point-inner" v-if="activeBreakpoint === 'md'">
+      <AddressLink />
     </div>
     <span class="room-and-penthouse-text">
       Квартиры и пентхаусы<br>бизнес-класса
@@ -19,18 +22,17 @@ import ChooseFlatButton from '@/components/UI/ChooseFlatButton.vue'
     <div class="choose-flat-button-inner">
       <ChooseFlatButton />
     </div>
-    <div class="additional-points-inner">
-      <AdditionalPoints />
+    <div class="additional-links-inner" v-if="activeBreakpoint !== 'lg'">
+      <AdditionalLinks />
     </div>
   </div>
 </template>
 
 <style scoped>
   .address-point-inner {
-    display: block;
     padding: 15px 0;
   }
-  .additional-points-inner {
+  .additional-links-inner {
     display: block;
     position: relative;
     padding: 30px 0;
@@ -52,9 +54,6 @@ import ChooseFlatButton from '@/components/UI/ChooseFlatButton.vue'
     display: none;
   }
   @media (max-width: 768px) {
-    .address-point-inner {
-      display: none;
-    }
     .comfort-plans-inner {
       display: block;
       padding: 15px 0;
@@ -68,12 +67,6 @@ import ChooseFlatButton from '@/components/UI/ChooseFlatButton.vue'
     }
   }
   @media (min-width: 1280px) {
-    .address-point-inner {
-      display: none;
-    }
-    .additional-points-inner {
-      display: none;
-    }
     .room-and-penthouse-text {
       font-size: 80px;
       line-height: 95px;
