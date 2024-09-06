@@ -10,7 +10,7 @@ const { activeBreakpoint } = useActiveBreakpoint()
 
 <template>
   <div>
-    <div v-if="activeBreakpoint === 'md'" class="address-point-inner">
+    <div v-if="activeBreakpoint === 'md'">
       <AddressLink />
     </div>
     <span class="room-and-penthouse-text">
@@ -29,9 +29,6 @@ const { activeBreakpoint } = useActiveBreakpoint()
 </template>
 
 <style scoped>
-  .address-point-inner {
-    padding: 15px 0;
-  }
   .additional-links-inner {
     display: block;
     position: relative;

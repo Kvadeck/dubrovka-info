@@ -7,18 +7,12 @@ const { activeBreakpoint } = useActiveBreakpoint()
 </script>
 
 <template>
-  <div v-if="activeBreakpoint === 'lg'" class="after-header-links">
+  <div v-if="activeBreakpoint === 'lg'" class="after-header-links relative flex-wrap flex justify-between py-8 px-[4.375rem]">
     <AddressLink />
     <AdditionalLinks />
   </div>
 </template>
 
 <style scoped>
-.after-header-links {
-  position: relative;
-  flex-wrap: wrap;
-  display: flex;
-  justify-content: space-between;
-  padding: 35px 70px;
-}
+
 </style>
