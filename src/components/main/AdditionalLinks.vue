@@ -2,21 +2,28 @@
 import the360 from '@/assets/img/360.svg'
 import document from '@/assets/img/document.svg'
 import metro from '@/assets/img/metro.svg'
+
+const addLinks = [
+  {
+    label: 'Панорама 360',
+    icon: the360,
+  },
+  {
+    label: 'Буклет',
+    icon: document,
+  },
+  {
+    label: 'Ольховая',
+    icon: metro,
+  },
+]
 </script>
 
 <template>
   <div class="flex flex-wrap gap-2xl lg:gap-10">
-    <div class="flex items-center gap-3">
-      <img class="-mt-1" :src="the360" alt="360_icon">
-      <span class="whitespace-nowrap text-lg color-white">Панорама 360</span>
-    </div>
-    <div class="flex items-center gap-3">
-      <img class="-mt-1" :src="document" alt="document_icon">
-      <span class="whitespace-nowrap text-lg color-white">Буклет</span>
-    </div>
-    <div class="flex items-center gap-3">
-      <img class="-mt-1" :src="metro" alt="metro_icon">
-      <span class="text-lg color-white uppercase lg:text-2xl">Ольховая</span>
+    <div v-for="item in addLinks" :key="item.label" class="flex items-center gap-3">
+      <img class="-mt-1" :src="item.icon" :alt="item.label">
+      <span class="whitespace-nowrap text-lg color-white">{{ item.label }}</span>
     </div>
   </div>
 </template>
