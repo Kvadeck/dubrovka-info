@@ -2,8 +2,9 @@
 import the360 from '@/assets/img/360.svg'
 import document from '@/assets/img/document.svg'
 import metro from '@/assets/img/metro.svg'
+import LinkIcon from '@/components/main/LinkIcon.vue'
 
-const addLinks = [
+const iconLinks = [
   {
     label: 'Панорама 360',
     icon: the360,
@@ -15,15 +16,15 @@ const addLinks = [
   {
     label: 'Ольховая',
     icon: metro,
+    class: 'tracking-wider uppercase',
   },
 ]
 </script>
 
 <template>
   <div class="flex flex-wrap gap-2xl lg:gap-10">
-    <div v-for="item in addLinks" :key="item.label" class="flex items-center gap-3">
+    <LinkIcon v-for="item in iconLinks" :key="item.label" :label="item.label" :class="item.class">
       <img class="-mt-1" :src="item.icon" :alt="item.label">
-      <span class="whitespace-nowrap text-lg color-white">{{ item.label }}</span>
-    </div>
+    </LinkIcon>
   </div>
 </template>

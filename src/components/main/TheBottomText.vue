@@ -1,18 +1,19 @@
 <script setup lang="ts">
-import AddressLink from '@/components/main/AddressLink.vue'
 import AdditionalLinks from '@/components/main/AdditionalLinks.vue'
 import ComfortPlans from '@/components/main/ComfortPlansText.vue'
 import ChooseFlatButton from '@/components/UI/ChooseFlatButton.vue'
 import { useActiveBreakpoint } from '@/composables/useActiveBreakpoint'
+import mark from '@/assets/img/mark.svg'
+import LinkIcon from '@/components/main/LinkIcon.vue'
 
 const { activeBreakpoint } = useActiveBreakpoint()
 </script>
 
 <template>
   <div>
-    <div v-if="activeBreakpoint === 'md'">
-      <AddressLink />
-    </div>
+    <LinkIcon v-if="activeBreakpoint === 'md'" class="tracking-wider uppercase" label="Новая москва">
+      <img class="-mt-1" :src="mark" alt="Новая москва">
+    </LinkIcon>
     <span class="room-and-penthouse-text">
       Квартиры и пентхаусы<br>бизнес-класса
     </span>
@@ -29,7 +30,7 @@ const { activeBreakpoint } = useActiveBreakpoint()
 </template>
 
 <style scoped>
-  .additional-links-inner {
+.additional-links-inner {
     display: block;
     position: relative;
     padding: 30px 0;
