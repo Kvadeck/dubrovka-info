@@ -14,7 +14,7 @@ function updateCurrentSlide(value: number) {
 </script>
 
 <template>
-  <div class="wrapper">
+  <div class="relative wrapper">
     <TheHeader />
     <TheAfterHeaderBlock />
     <TheCarousel @get-current-slide="updateCurrentSlide" />
@@ -26,10 +26,6 @@ function updateCurrentSlide(value: number) {
 </template>
 
 <style scoped>
-.wrapper {
-  position: relative;
-  min-height: fit-content;
-}
 .wrapper:before {
   content: "";
   position: absolute;

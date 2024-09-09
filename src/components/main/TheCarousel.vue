@@ -1,18 +1,9 @@
 <script setup lang="ts">
 import { Carousel, Navigation, Slide } from 'vue3-carousel'
-
-import Slide1l from '@/assets/img/slides/slide1_large.jpg'
-import Slide2l from '@/assets/img/slides/slide2_large.jpg'
-import Slide3l from '@/assets/img/slides/slide3_large.jpg'
-
-import Slide1s from '@/assets/img/slides/slide1_medium.jpg'
-import Slide2s from '@/assets/img/slides/slide2_medium.jpg'
-import Slide3s from '@/assets/img/slides/slide3_medium.jpg'
-
-import ImageDefault from '@/assets/img/slides/image-default.jpg'
-
 import Arrow from '@/assets/img/arrow.svg'
 import 'vue3-carousel/dist/carousel.css'
+import SlidePicture from '@/components/main/SlidePicture.vue'
+import { slideImages } from '@/config/constants'
 
 const emit = defineEmits<{
   getCurrentSlide: [slide: number]
@@ -24,42 +15,18 @@ function handleSlideEnd(data: { currentSlideIndex: number }) {
 </script>
 
 <template>
-  <div class="carousel-wrapper">
+  <div class="relative mx-auto my-0 max-w-[1486px]">
     <Carousel @slide-end="handleSlideEnd">
-      <Slide :key="1">
-        <div class="carousel__item">
-          <picture>
-            <source :srcset="Slide1l" media="(min-width: 768px)">
-            <source :srcset="Slide1s" media="(max-width: 768px)">
-            <img :src="ImageDefault" alt="Slide1">
-          </picture>
-        </div>
-      </Slide>
-      <Slide :key="2">
-        <div class="carousel__item">
-          <picture>
-            <source :srcset="Slide2l" media="(min-width: 768px)">
-            <source :srcset="Slide2s" media="(max-width: 768px)">
-            <img :src="ImageDefault" alt="Slide2">
-          </picture>
-        </div>
-      </Slide>
-      <Slide :key="3">
-        <div class="carousel__item">
-          <picture>
-            <source :srcset="Slide3l" media="(min-width: 768px)">
-            <source :srcset="Slide3s" media="(max-width: 768px)">
-            <img :src="ImageDefault" alt="Slide3">
-          </picture>
-        </div>
+      <Slide v-for="(slide, index) in slideImages" :key="index">
+        <SlidePicture :id="index" :large="slide.large" :medium="slide.medium" />
       </Slide>
       <template #addons>
         <Navigation>
           <template #next>
-            <img class="next-arrow" :src="Arrow" alt="arrow_next">
+            <img class="next-arrow bg-color-custom h-[40px] w-[40px] rounded-full md:h-[70px] md:w-[70px] -rotate-180" :src="Arrow" alt="Arrow_next">
           </template>
           <template #prev>
-            <img class="prev-arrow" :src="Arrow" alt="arrow_prev">
+            <img class="prev-arrow bg-color-custom h-[40px] w-[40px] rounded-full md:h-[70px] md:w-[70px]" :src="Arrow" alt="Arrow_prev">
           </template>
         </Navigation>
       </template>
@@ -68,62 +35,10 @@ function handleSlideEnd(data: { currentSlideIndex: number }) {
 </template>
 
 <style>
-.carousel-wrapper {
-  padding: 30px 80px;
-  position: relative;
+.carousel__prev, .carousel__next {
+  margin: 0 20px;
 }
-
-.carousel__prev {
-  left: -45px;
-}
-
-.carousel__next {
-  right: -45px;
-}
-.carousel__item img {
-  width: 100%;
-  height: auto;
-}
-
-.next-arrow {
-  transform: rotate(-180deg);
-}
-
-.carousel__prev img, .carousel__next img {
-  width: 40px;
-  height: 40px;
-}
-@media (max-width: 768px) {
-  .carousel-wrapper {
-    padding: 30px 25px;
-  }
-  .carousel__prev {
-    left: 0;
-  }
-  .carousel__next {
-    right: 0;
-  }
-  .carousel__prev img, .carousel__next img {
-    border-radius: 20px;
-    background-color: var(--primary-background);
-  }
-}
-@media (min-width: 1280px) {
-  .carousel-wrapper {
-    padding: 0 170px;
-  }
-  .carousel {
-    position: initial;
-  }
-  .carousel__prev img, .carousel__next img {
-    width: 70px;
-    height: 70px;
-  }
-  .carousel__prev {
-    left: 85px;
-  }
-  .carousel__next {
-    right: 85px;
-  }
+.bg-color-custom {
+  background-color: var(--primary-background-opacity);
 }
 </style>
