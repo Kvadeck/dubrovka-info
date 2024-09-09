@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import TheHeader from '@/components/TheHeader.vue'
-import TheInformation from '@/components/main/TheAfterHeaderLinks.vue'
+import TheAfterHeaderBlock from '@/components/main/TheAfterHeaderBlock.vue'
 import TheCarousel from '@/components/main/TheCarousel.vue'
-import TheBottomText from '@/components/main/TheBottomText.vue'
+import TheBottomBlock from '@/components/main/TheBottomBlock.vue'
 import TheCountOfSlides from '@/components/main/TheCountOfSlides.vue'
 
 const currentSlide = ref(1)
@@ -16,10 +16,10 @@ function updateCurrentSlide(value: number) {
 <template>
   <div class="wrapper">
     <TheHeader />
-    <TheInformation />
+    <TheAfterHeaderBlock />
     <TheCarousel @get-current-slide="updateCurrentSlide" />
-    <div class="bottom-inner">
-      <TheBottomText />
+    <div class="flex justify-between px-[70px] -mt-[70px] max-lg:px-[25px]">
+      <TheBottomBlock />
       <TheCountOfSlides :slide="currentSlide" />
     </div>
   </div>
@@ -42,16 +42,5 @@ function updateCurrentSlide(value: number) {
   background-size: cover;
   background-position: center;
   pointer-events: none;
-}
-.bottom-inner {
-  display: flex;
-  padding: 0 70px;
-  margin-top: -70px;
-  justify-content: space-between;
-}
-@media (max-width: 768px) {
-  .bottom-inner {
-    padding: 0 25px;
-  }
 }
 </style>

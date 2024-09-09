@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import ComfortPlans from '@/components/main/ComfortPlansText.vue'
+import ComfortPlans from '@/components/main/ComfortPlans.vue'
 
 export interface TheCountOfSlidesProps {
   slide: number

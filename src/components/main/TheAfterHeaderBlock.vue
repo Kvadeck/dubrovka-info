@@ -15,7 +15,3 @@ const { activeBreakpoint } = useActiveBreakpoint()
     <AdditionalLinks />
   </div>
 </template>
-
-<style scoped>
-
-</style>
