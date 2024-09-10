@@ -18,3 +18,10 @@ export const slideImages = [
   { medium: Slide2s, large: Slide2l },
   { medium: Slide3s, large: Slide3l },
 ]
+
+export const navLinks = [
+  { label: 'О проекте', href: '#' },
+  { label: 'Каталог', href: '#' },
+  { label: 'Галерея', href: '#' },
+  { label: 'Новости', href: '#' },
+]

@@ -14,13 +14,13 @@ function updateCurrentSlide(value: number) {
 </script>
 
 <template>
-  <div class="relative wrapper">
+  <div class="wrapper relative">
     <TheHeader />
     <TheAfterHeaderBlock />
     <TheCarousel @get-current-slide="updateCurrentSlide" />
     <div class="flex justify-between px-[70px] -mt-[70px] max-lg:px-[25px]">
       <TheBottomBlock />
-      <TheCountOfSlides :slide="currentSlide" />
+      <TheCountOfSlides :slide-number="currentSlide" />
     </div>
   </div>
 </template>

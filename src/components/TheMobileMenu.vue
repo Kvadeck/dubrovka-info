@@ -2,7 +2,7 @@
 import { ref } from 'vue'
 import mobileLogo from '@/assets/img/mobileMenu.svg'
 import cross from '@/assets/img/cross.svg'
-import ChooseFlatButton from '@/components/UI/ChooseFlatButton.vue'
+import ChooseFlatBtn from '@/components/UI/ChooseFlatBtn.vue'
 
 const isPanelOpen = ref(false)
 
@@ -27,7 +27,7 @@ function togglePanel() {
       <a class="mobile-menu_link" href="#">Каталог</a>
       <a class="mobile-menu_link" href="#">Галерея</a>
       <a class="mobile-menu_link" href="#">Новости</a>
-      <ChooseFlatButton />
+      <ChooseFlatBtn />
       <a class="mobile-menu-phone" href="#">+7 (495) 185-13-82</a>
     </div>
   </div>

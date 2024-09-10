@@ -11,7 +11,7 @@ export default defineConfig({
       sm: '480px',
       md: '768px',
       lg: '1280px',
-      xl: '1500px'
-    }
-  }
+      xl: '1500px',
+    },
+  },
 })

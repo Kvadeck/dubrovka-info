@@ -1,1 +1,47 @@
 @import './base.css';
+
+/* General */
+.custom-gradient-text {
+    background: linear-gradient(180deg, var(--primary-gradient) 0%, var(--secondary-gradient) 100%);
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+}
+.custom-gradient {
+    background: linear-gradient(180deg, var(--primary-gradient) 0%, var(--secondary-gradient) 100%);
+}
+.custom-font-family {
+    font-family: 'Cormorant_Garamond', serif, sans-serif;
+}
+
+/* Carousel overrides */
+.carousel__prev, .carousel__next {
+    margin: 0 20px;
+}
+.carousel__prev {
+    left: 30px;
+}
+.carousel__next {
+    right: 30px;
+}
+@media (max-width: 768px) {
+    .carousel__prev {
+        left: 0;
+    }
+    .carousel__next {
+        right: 0;
+    }
+}
+@media (min-width: 768px) {
+    .carousel {
+        position: initial;
+    }
+}
+@media (min-width: 1500px) {
+    .carousel__prev {
+        left: 70px;
+    }
+    .carousel__next {
+        right: 70px;
+    }
+}
