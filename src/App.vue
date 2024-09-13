@@ -14,7 +14,7 @@ function updateCurrentSlide(value: number) {
 </script>
 
 <template>
-  <div class="wrapper relative">
+  <div class="relative before:absolute before:bottom-0 before:left-0 before:right-0 before:top-0 before:bg-[url('@/assets/img/background.png')] before:bg-cover before:bg-center before:content-['']">
     <TheHeader />
     <TheAfterHeaderBlock />
     <TheCarousel @get-current-slide="updateCurrentSlide" />
@@ -27,16 +27,6 @@ function updateCurrentSlide(value: number) {
 
 <style scoped>
 .wrapper:before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-image: url('@/assets/img/background.png');
-  background-color: var(--primary-background);
-  background-size: cover;
-  background-position: center;
   pointer-events: none;
 }
 </style>

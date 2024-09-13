@@ -1,24 +1,6 @@
 <script setup lang="ts">
-import the360 from '@/assets/img/360.svg'
-import document from '@/assets/img/document.svg'
-import metro from '@/assets/img/metro.svg'
 import LinkIcon from '@/components/main/LinkIcon.vue'
-
-const iconLinks = [
-  {
-    label: 'Панорама 360',
-    icon: the360,
-  },
-  {
-    label: 'Буклет',
-    icon: document,
-  },
-  {
-    label: 'Ольховая',
-    icon: metro,
-    class: 'tracking-wider uppercase',
-  },
-]
+import { iconLinks } from '@/config/constants'
 </script>
 
 <template>
