@@ -3,10 +3,9 @@ import ComfortPlans from '@/components/main/ComfortPlans.vue'
 import { useActiveBreakpoint } from '@/composables/useActiveBreakpoint'
 import { slideImages } from '@/config/constants'
 
-export interface TheCountOfSlidesProps {
+defineProps<{
   slideNumber: number
-}
-const props = defineProps<TheCountOfSlidesProps>()
+}>()
 const { activeBreakpoint } = useActiveBreakpoint()
 </script>
 
@@ -16,7 +15,7 @@ const { activeBreakpoint } = useActiveBreakpoint()
       <ComfortPlans />
     </div>
     <div class="custom-gradient-text flex items-center uppercase lg:text-[36px]">
-      {{ props.slideNumber }}/{{ slideImages.length }}
+      {{ slideNumber }}/{{ slideImages.length }}
     </div>
   </div>
 </template>

@@ -24,9 +24,3 @@ function updateCurrentSlide(value: number) {
     </div>
   </div>
 </template>
-
-<style scoped>
-.wrapper:before {
-  pointer-events: none;
-}
-</style>

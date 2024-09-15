@@ -5,8 +5,8 @@ import { iconLinks } from '@/config/constants'
 
 <template>
   <div class="flex flex-wrap gap-2xl lg:gap-10">
-    <LinkIcon v-for="item in iconLinks" :key="item.label" :label="item.label" :class="item.class">
-      <img class="-mt-1" :src="item.icon" :alt="item.label">
+    <LinkIcon v-for="{ label, icon, class: itemClass = '' } in iconLinks" :key="label" :label="label" :class="itemClass">
+      <img class="-mt-1" :src="icon" :alt="label">
     </LinkIcon>
   </div>
 </template>

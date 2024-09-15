@@ -9,27 +9,42 @@ import the360 from '@/assets/img/360.svg'
 import document from '@/assets/img/document.svg'
 import metro from '@/assets/img/metro.svg'
 
-// breakpoints didn't have xl value from uno.config.ts
-export const breakpoints = {
+export const breakpoints: { [key: string]: number } = {
   sm: 0,
   md: 768,
   lg: 1280,
 }
 
-export const slideImages = [
+interface SlideImage {
+  medium: string
+  large: string
+}
+
+export const slideImages: SlideImage[] = [
   { medium: Slide1s, large: Slide1l },
   { medium: Slide2s, large: Slide2l },
   { medium: Slide3s, large: Slide3l },
 ]
 
-export const navLinks = [
+interface navLink {
+  label: string
+  href: string
+}
+
+export const navLinks: navLink[] = [
   { label: 'О проекте', href: '#' },
   { label: 'Каталог', href: '#' },
   { label: 'Галерея', href: '#' },
   { label: 'Новости', href: '#' },
 ]
 
-export const iconLinks = [
+interface iconLink {
+  label: string
+  icon: string
+  class?: string
+}
+
+export const iconLinks: iconLink[] = [
   {
     label: 'Панорама 360',
     icon: the360,
