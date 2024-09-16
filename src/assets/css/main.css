@@ -14,6 +14,16 @@
     font-family: 'Cormorant_Garamond', serif, sans-serif;
 }
 
+.custom-border-gradient {
+    background: linear-gradient(180deg, var(--primary-gradient) 0%, var(--secondary-gradient) 100%);
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+    height: 2px;
+    display: block;
+    width: 100%;
+    position: relative;
+}
+
 /* Carousel overrides */
 .carousel__prev, .carousel__next {
     margin: 0 20px;

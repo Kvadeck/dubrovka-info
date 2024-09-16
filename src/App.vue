@@ -5,6 +5,7 @@ import TheAfterHeaderBlock from '@/components/main/TheAfterHeaderBlock.vue'
 import TheCarousel from '@/components/main/TheCarousel.vue'
 import TheBottomBlock from '@/components/main/TheBottomBlock.vue'
 import TheCountOfSlides from '@/components/main/TheCountOfSlides.vue'
+import TheInfoBlock from '@/components/jk-dubrovka/TheInfoBlock.vue'
 
 const currentSlide = ref(1)
 
@@ -14,7 +15,7 @@ function updateCurrentSlide(value: number) {
 </script>
 
 <template>
-  <div class="relative before:absolute before:bottom-0 before:left-0 before:right-0 before:top-0 before:bg-[url('@/assets/img/background.png')] before:bg-cover before:bg-center before:content-['']">
+  <section class="relative pb-[35px] before:absolute before:bottom-0 before:left-0 before:right-0 before:top-0 before:bg-[url('@/assets/img/background.png')] before:bg-cover before:bg-center lg:pb-[70px] before:content-['']">
     <TheHeader />
     <TheAfterHeaderBlock />
     <TheCarousel @get-current-slide="updateCurrentSlide" />
@@ -22,5 +23,8 @@ function updateCurrentSlide(value: number) {
       <TheBottomBlock />
       <TheCountOfSlides :slide-number="currentSlide" />
     </div>
-  </div>
+  </section>
+  <section class="bg-[var(--third-background)] px-[35px] py-[35px] lg:px-[70px] lg:py-[120px]">
+    <TheInfoBlock />
+  </section>
 </template>

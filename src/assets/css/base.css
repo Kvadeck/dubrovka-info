@@ -1,8 +1,7 @@
 :root {
-  --white: #ffffff;
-  --black: #181818;
-  --primary-background: #392314;
-  --secondary-background: #543E30;
+  --primary-color: #392314;
+  --secondary-color: #543E30;
+  --third-background: #F9F9F9;
   --primary-link: #E8C896;
   --primary-gradient: #DAB57B;
   --secondary-gradient: #C29A5C;
@@ -24,14 +23,26 @@
   font-style: normal;
 }
 @font-face {
+  font-family: 'Cormorant_Garamond';
+  src: url('@/assets/fonts/CormorantGaramond-SemiBold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
   font-family: 'Gotham Pro';
   src: url('@/assets/fonts/GothamPro.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
+@font-face {
+  font-family: 'Gotham Pro';
+  src: url('@/assets/fonts/GothamPro_Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
 html {
   scroll-behavior: smooth;
-  background-color: var(--primary-background);
+  background-color: var(--primary-color);
 }
 body {
   min-height: 100vh;

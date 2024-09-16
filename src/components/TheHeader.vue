@@ -2,7 +2,7 @@
 import logo from '@/assets/img/logo.svg'
 import TheMobileMenu from '@/components/TheMobileMenu.vue'
 import { useActiveBreakpoint } from '@/composables/useActiveBreakpoint'
-import ChooseFlatBtn from '@/components/UI/ChooseFlatBtn.vue'
+import ChooseFlatBtn from '@/components/ui/ChooseFlatBtn.vue'
 import { navLinks } from '@/config/constants'
 
 const { activeBreakpoint } = useActiveBreakpoint()
@@ -18,7 +18,7 @@ const { activeBreakpoint } = useActiveBreakpoint()
     </div>
     <ChooseFlatBtn v-if="activeBreakpoint !== 'sm'" class="h-[55px] max-lg:h-[33px]" />
     <div v-if="activeBreakpoint !== 'sm'" class="flex justify-end">
-      <a class="whitespace-nowrap text-[24px] color-white font-600 decoration-none opacity-[0.8] transition-colors duration-200 hover:color-[var(--primary-link)]" href="#">
+      <a class="whitespace-nowrap text-[24px] color-white font-500 decoration-none opacity-[0.8] transition-colors duration-200 hover:color-[var(--primary-link)]" href="#">
         +7 (495) 185-13-82
       </a>
     </div>

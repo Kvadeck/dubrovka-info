@@ -22,10 +22,10 @@ function handleSlideEnd(data: { currentSlideIndex: number }) {
       <template #addons>
         <Navigation>
           <template #next>
-            <img class="h-[40px] w-[40px] rounded-full bg-[var(--primary-background)] md:h-[70px] md:w-[70px] -rotate-180" :src="Arrow" alt="Arrow_next">
+            <img class="h-[40px] w-[40px] rounded-full bg-[var(--primary-color)] md:h-[70px] md:w-[70px] -rotate-180" :src="Arrow" alt="Arrow_next">
           </template>
           <template #prev>
-            <img class="h-[40px] w-[40px] rounded-full bg-[var(--primary-background)] md:h-[70px] md:w-[70px]" :src="Arrow" alt="Arrow_prev">
+            <img class="h-[40px] w-[40px] rounded-full bg-[var(--primary-color)] md:h-[70px] md:w-[70px]" :src="Arrow" alt="Arrow_prev">
           </template>
         </Navigation>
       </template>
