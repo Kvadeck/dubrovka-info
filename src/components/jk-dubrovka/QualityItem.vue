@@ -7,13 +7,9 @@ import QualityTitle from '@/components/jk-dubrovka/QualityTitle.vue'
     <QualityTitle class="lg:pb-[20px]">
       <slot name="title" />
     </QualityTitle>
-    <span class="pb-[36px] text-[18px]">
+    <span class="pb-[36px] lg:text-[18px]">
       <slot name="description" />
     </span>
     <span class="custom-border-gradient" />
   </li>
 </template>
-
-<style scoped>
-
-</style>

@@ -5,6 +5,13 @@ import Slide3l from '@/assets/img/slides/slide3_large.jpg'
 import Slide1s from '@/assets/img/slides/slide1_medium.jpg'
 import Slide2s from '@/assets/img/slides/slide2_medium.jpg'
 import Slide3s from '@/assets/img/slides/slide3_medium.jpg'
+
+import jkSlide1l from '@/assets/img/jk-dubrovka-slides/slide1_large.jpg'
+import jkSlide2l from '@/assets/img/jk-dubrovka-slides/slide2_large.jpg'
+
+import jkSlide1s from '@/assets/img/jk-dubrovka-slides/slide1_medium.jpg'
+import jkSlide2s from '@/assets/img/jk-dubrovka-slides/slide2_medium.jpg'
+
 import the360 from '@/assets/img/360.svg'
 import document from '@/assets/img/document.svg'
 import metro from '@/assets/img/metro.svg'
@@ -24,6 +31,11 @@ export const slideImages: SlideImage[] = [
   { medium: Slide1s, large: Slide1l },
   { medium: Slide2s, large: Slide2l },
   { medium: Slide3s, large: Slide3l },
+]
+
+export const qualitySlideImages: SlideImage[] = [
+  { medium: jkSlide1s, large: jkSlide1l },
+  { medium: jkSlide2s, large: jkSlide2l },
 ]
 
 interface navLink {

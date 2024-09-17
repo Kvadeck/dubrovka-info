@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { Carousel, Navigation, Slide } from 'vue3-carousel'
 import Arrow from '@/assets/img/arrow.svg'
-import SlidePicture from '@/components/main/SlidePicture.vue'
+import SlidePicture from '@/components/ui/SlidePicture.vue'
 import { slideImages } from '@/config/constants'
 
 const emit = defineEmits<{
@@ -15,7 +15,7 @@ function handleSlideEnd(data: { currentSlideIndex: number }) {
 
 <template>
   <div class="mx-auto my-0 max-w-[594px] md:max-w-[1486px]">
-    <Carousel :wrap-around="true" @slide-end="handleSlideEnd">
+    <Carousel id="main-carousel" :wrap-around="true" :mouse-drag="false" @slide-end="handleSlideEnd">
       <Slide v-for="(slide, index) in slideImages" :key="index">
         <SlidePicture :id="index" :large="slide.large" :medium="slide.medium" />
       </Slide>

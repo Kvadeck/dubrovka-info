@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import QualityTitle from '@/components/jk-dubrovka/QualityTitle.vue'
 import QualityItem from '@/components/jk-dubrovka/QualityItem.vue'
 import { qualityList } from '@/config/constants'
 </script>
@@ -16,9 +15,6 @@ import { qualityList } from '@/config/constants'
       </template>
     </QualityItem>
   </ul>
-  <QualityTitle class="mt-[14px] block">
-    30 лет создаем <br>искусство
-  </QualityTitle>
 </template>
 
 <style scoped>

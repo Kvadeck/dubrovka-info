@@ -15,7 +15,7 @@ function updateCurrentSlide(value: number) {
 </script>
 
 <template>
-  <section class="relative pb-[35px] before:absolute before:bottom-0 before:left-0 before:right-0 before:top-0 before:bg-[url('@/assets/img/background.png')] before:bg-cover before:bg-center lg:pb-[70px] before:content-['']">
+  <section class="custom-background relative pb-[35px] lg:pb-[70px]">
     <TheHeader />
     <TheAfterHeaderBlock />
     <TheCarousel @get-current-slide="updateCurrentSlide" />
@@ -24,7 +24,7 @@ function updateCurrentSlide(value: number) {
       <TheCountOfSlides :slide-number="currentSlide" />
     </div>
   </section>
-  <section class="bg-[var(--third-background)] px-[35px] py-[35px] lg:px-[70px] lg:py-[120px]">
+  <section class="bg-[var(--third-background)] py-[35px] lg:py-[120px]">
     <TheInfoBlock />
   </section>
 </template>
