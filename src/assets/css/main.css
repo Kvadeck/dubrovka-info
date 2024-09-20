@@ -31,8 +31,13 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background-size: cover;
     background: url('@/assets/img/background.png') center;
+    background-size: cover;
+}
+
+.custom-bg-image {
+    background-image:url('@/assets/img/background.png');
+    background-color: var(--primary-color)
 }
 
 /* Carousel overrides */

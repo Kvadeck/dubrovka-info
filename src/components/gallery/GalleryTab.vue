@@ -17,7 +17,3 @@ const emit = defineEmits<{
     <span :class="[{ 'bg-none bg-[var(--secondary-color)]': id === currentTab }]" class="custom-border-gradient" />
   </div>
 </template>
-
-<style scoped>
-
-</style>
