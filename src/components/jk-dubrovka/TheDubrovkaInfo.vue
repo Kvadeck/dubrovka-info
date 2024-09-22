@@ -2,9 +2,6 @@
 import Title from '@/components/SectionTitle.vue'
 import TheQualityList from '@/components/jk-dubrovka/TheQualityList.vue'
 import QualitySlider from '@/components/jk-dubrovka/QualitySlider.vue'
-import { useActiveBreakpoint } from '@/composables/useActiveBreakpoint'
-
-const { activeBreakpoint } = useActiveBreakpoint()
 </script>
 
 <template>
@@ -13,11 +10,15 @@ const { activeBreakpoint } = useActiveBreakpoint()
       <Title class="mb-[16px] block text-[32px] color-[var(--secondary-color)] font-bold uppercase lg:mb-[59px] lg:text-[56px]">
         ЖК «Дубровка»
       </Title>
-      <QualitySlider v-if="activeBreakpoint === 'sm'" />
+      <BreakpointBlock :is-equal="true" breakpoint="sm">
+        <QualitySlider />
+      </BreakpointBlock>
       <TheQualityList />
     </div>
     <div class="relative">
-      <QualitySlider v-if="activeBreakpoint !== 'sm'" />
+      <BreakpointBlock :is-equal="false" breakpoint="sm">
+        <QualitySlider />
+      </BreakpointBlock>
     </div>
   </div>
 </template>

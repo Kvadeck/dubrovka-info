@@ -1,7 +1,3 @@
-<script setup lang="ts">
-
-</script>
-
 <template>
   <div class="custom-bg-image bg-[var(--primary-color)] bg-center lg:min-h-[600px] md:min-h-[340px]">
     <div class="p-[10%] lg:p-[10%]">

@@ -3,5 +3,8 @@ import './assets/css/main.css'
 import 'uno.css'
 import { createApp } from 'vue'
 import App from './App.vue'
+import BreakpointBlock from '@/components/ui/BreakpointBlock.vue'
 
-createApp(App).mount('#app')
+const app = createApp(App)
+app.component('BreakpointBlock', BreakpointBlock)
+app.mount('#app')
