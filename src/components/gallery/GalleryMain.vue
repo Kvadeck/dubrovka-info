@@ -1,11 +1,17 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { provide, ref } from 'vue'
 import Title from '@/components/SectionTitle.vue'
 import Leaf from '@/components/Leaf.vue'
-import TheGalleryTabs from '@/components/gallery/TheGalleryTabs.vue'
+import Tabs from '@/components/ui/Tabs.vue'
+import { galleryTabItems } from '@/config/constants'
 import TheGalleryPlates from '@/components/gallery/TheGalleryPlates.vue'
 
 const currentTab = ref(0)
+
+function updateTab(id: number) {
+  currentTab.value = id
+}
+provide('updateTab', updateTab)
 </script>
 
 <template>
@@ -14,7 +20,7 @@ const currentTab = ref(0)
     <Title class="mb-[16px] block text-[32px] color-[var(--secondary-color)] font-bold uppercase lg:mb-[59px] lg:text-[56px]">
       Галерея
     </Title>
-    <TheGalleryTabs :current-tab="currentTab" @change-current-tab="currentTab = $event" />
+    <Tabs class="grid-cols-[repeat(2,1fr)] sm:grid-cols-[repeat(4,1fr)]" :current-tab="currentTab" :items="galleryTabItems" />
     <TheGalleryPlates :current-tab="currentTab" />
   </div>
 </template>

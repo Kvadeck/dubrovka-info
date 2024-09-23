@@ -15,6 +15,7 @@
   "dependencies": {
     "@unocss/preset-uno": "^0.62.3",
     "@vueuse/core": "^11.0.3",
+    "animate.css": "^4.1.1",
     "unocss": "^0.62.3",
     "vue": "^3.4.29",
     "vue3-carousel": "^0.3.3"

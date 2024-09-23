@@ -6,7 +6,7 @@ import TheCarousel from '@/components/main/TheCarousel.vue'
 import TheBottomBlock from '@/components/main/TheBottomBlock.vue'
 import TheCountOfSlides from '@/components/main/TheCountOfSlides.vue'
 import TheDubrovkaInfo from '@/components/jk-dubrovka/TheDubrovkaInfo.vue'
-import TheGallery from '@/components/gallery/Gallery.vue'
+import TheGallery from '@/components/gallery/GalleryMain.vue'
 
 const currentSlide = ref(1)
 
