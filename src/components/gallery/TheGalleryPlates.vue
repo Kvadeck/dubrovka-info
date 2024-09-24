@@ -1,10 +1,9 @@
 <script setup lang="ts">
+import { inject } from 'vue'
 import GalleryPlate from '@/components/gallery/GalleryPlate.vue'
 import { galleryPlateItems } from '@/config/constants'
 
-defineProps<{
-  currentTab: number
-}>()
+const currentTab = inject<number>('currentTab', 0)
 </script>
 
 <template>

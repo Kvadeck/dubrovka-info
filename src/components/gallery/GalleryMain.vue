@@ -11,7 +11,8 @@ const currentTab = ref(0)
 function updateTab(id: number) {
   currentTab.value = id
 }
-provide('updateTab', updateTab)
+
+provide('currentTab', currentTab)
 </script>
 
 <template>
@@ -20,11 +21,7 @@ provide('updateTab', updateTab)
     <Title class="mb-[16px] block text-[32px] color-[var(--secondary-color)] font-bold uppercase lg:mb-[59px] lg:text-[56px]">
       Галерея
     </Title>
-    <Tabs class="grid-cols-[repeat(2,1fr)] sm:grid-cols-[repeat(4,1fr)]" :current-tab="currentTab" :items="galleryTabItems" />
-    <TheGalleryPlates :current-tab="currentTab" />
+    <Tabs class="grid-cols-[repeat(2,1fr)] sm:grid-cols-[repeat(4,1fr)]" :current-tab="currentTab" :items="galleryTabItems" :change-event="updateTab" />
+    <TheGalleryPlates />
   </div>
 </template>
-
-<style scoped>
-
-</style>

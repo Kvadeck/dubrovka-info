@@ -2,12 +2,12 @@
 defineProps<{
   id: number
   currentTab: number
-  event: (id: number) => void
+  changeEvent: (id: number) => void
 }>()
 </script>
 
 <template>
-  <div class="relative cursor-pointer" @click="event(id)">
+  <div class="relative cursor-pointer" @click="changeEvent(id)">
     <div class="pb-[13px] font-500 font-bold uppercase opacity-[0.4] sm:pb-[20px]" :class="[{ 'opacity-[1]': id === currentTab }]">
       <slot />
     </div>

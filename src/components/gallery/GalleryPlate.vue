@@ -1,6 +1,3 @@
-<script setup lang="ts">
-</script>
-
 <template>
   <div class="custom-bg-image min-h-[500px] bg-[var(--primary-color)] bg-center lg:min-h-[500px]">
     <div class="p-[10%]">
@@ -13,6 +10,3 @@
     </div>
   </div>
 </template>
-
-<style scoped>
-</style>

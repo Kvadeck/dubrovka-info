@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { inject } from 'vue'
 import TabItem from '@/components/ui/TabItem.vue'
 
 interface Items {
@@ -9,14 +8,13 @@ interface Items {
 defineProps<{
   items: Items[]
   currentTab: number
+  changeEvent: (id: number) => void
 }>()
-
-const updateTab = inject('updateTab') as (id: number) => void
 </script>
 
 <template>
   <div class="grid gap-y-[28px]">
-    <TabItem v-for="(item, index) in items" :id="index" :key="item.title" :current-tab="currentTab" :event="updateTab">
+    <TabItem v-for="(item, index) in items" :id="index" :key="item.title" :current-tab="currentTab" :change-event="changeEvent">
       {{ item.title }}
     </TabItem>
   </div>
