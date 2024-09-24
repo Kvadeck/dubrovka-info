@@ -12,6 +12,24 @@ import jkSlide2l from '@/assets/img/jk-dubrovka-slides/slide2_large.jpg'
 import jkSlide1s from '@/assets/img/jk-dubrovka-slides/slide1_medium.jpg'
 import jkSlide2s from '@/assets/img/jk-dubrovka-slides/slide2_medium.jpg'
 
+import infraAll_l from '@/assets/img/infrastructure/all_large.jpg'
+import infraAll1_s from '@/assets/img/infrastructure/all_medium.jpg'
+
+import infraDosug_l from '@/assets/img/infrastructure/dosug_large.jpg'
+import infraDosug_s from '@/assets/img/infrastructure/dosug_medium.jpg'
+
+import infraEdu_l from '@/assets/img/infrastructure/edu_large.jpg'
+import infraEdu_s from '@/assets/img/infrastructure/edu_medium.jpg'
+
+import infraOther_l from '@/assets/img/infrastructure/other_large.jpg'
+import infraOther_s from '@/assets/img/infrastructure/other_medium.jpg'
+
+import infraShops_l from '@/assets/img/infrastructure/shops_large.jpg'
+import infraShops_s from '@/assets/img/infrastructure/shops_medium.jpg'
+
+import infraVeln_l from '@/assets/img/infrastructure/veln_large.jpg'
+import infraVeln_s from '@/assets/img/infrastructure/veln_medium.jpg'
+
 import the360 from '@/assets/img/360.svg'
 import document from '@/assets/img/document.svg'
 import metro from '@/assets/img/metro.svg'
@@ -36,6 +54,15 @@ export const slideImages: SlideImage[] = [
 export const qualitySlideImages: SlideImage[] = [
   { medium: jkSlide1s, large: jkSlide1l },
   { medium: jkSlide2s, large: jkSlide2l },
+]
+
+export const infrastructureImages: SlideImage[] = [
+  { medium: infraAll1_s, large: infraAll_l },
+  { medium: infraDosug_s, large: infraDosug_l },
+  { medium: infraEdu_s, large: infraEdu_l },
+  { medium: infraShops_s, large: infraShops_l },
+  { medium: infraVeln_s, large: infraVeln_l },
+  { medium: infraOther_s, large: infraOther_l },
 ]
 
 interface navLink {
@@ -72,12 +99,12 @@ export const iconLinks: iconLink[] = [
   },
 ]
 
-interface qualityItem {
+interface SectionItem {
   title: string
   description: string
 }
 
-export const qualityList: qualityItem[] = [
+export const dubrovkaList: SectionItem[] = [
   {
     title: 'Спокойствие',
     description: 'Жилой комплекс «Дубровка» во Фрунзенском районе в двух шагах от Лиговского проспекта. Живописный двор с пейзажным парком, роскошное лобби, коворкинг для жителей и муниципальный детский сад в доме.',
@@ -88,11 +115,26 @@ export const qualityList: qualityItem[] = [
   },
 ]
 
-interface galleryTabItem {
+export const infrastructureList: SectionItem[] = [
+  {
+    title: '10 минут',
+    description: 'На авто до МКАД',
+  },
+  {
+    title: '2 минуты',
+    description: 'На авто до Калужского шоссе',
+  },
+  {
+    title: '15 минут',
+    description: 'Пешком до м. Ольховая',
+  },
+]
+
+interface TabItem {
   title: string
 }
 
-export const galleryTabItems: galleryTabItem[] = [
+export const galleryTabItems: TabItem[] = [
   {
     title: 'Двор',
   },
@@ -104,6 +146,27 @@ export const galleryTabItems: galleryTabItem[] = [
   },
   {
     title: 'Архитектура',
+  },
+]
+
+export const infrastructureTabItems: TabItem[] = [
+  {
+    title: 'Все',
+  },
+  {
+    title: 'Досуг',
+  },
+  {
+    title: 'Образование',
+  },
+  {
+    title: 'Магазины',
+  },
+  {
+    title: 'Здоровье',
+  },
+  {
+    title: 'Прочее',
   },
 ]
 

@@ -40,6 +40,10 @@
     background-color: var(--primary-color)
 }
 
+.hide-last-border li:last-child .custom-border-gradient {
+    display: none;
+}
+
 /* Carousel overrides */
 #main-carousel .carousel__prev,
 #main-carousel .carousel__next {

@@ -2,7 +2,6 @@
 import { Carousel, Navigation, Slide } from 'vue3-carousel'
 import { qualitySlideImages } from '@/config/constants'
 import Arrow from '@/assets/img/arrow.svg'
-
 </script>
 
 <template>
@@ -22,7 +21,3 @@ import Arrow from '@/assets/img/arrow.svg'
     </template>
   </Carousel>
 </template>
-
-<style scoped>
-
-</style>

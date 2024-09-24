@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { Carousel, Navigation, Slide } from 'vue3-carousel'
 import Arrow from '@/assets/img/arrow.svg'
-import SlidePicture from '@/components/ui/SlidePicture.vue'
+import SlidePicture from '@/components/ui/PictureImg.vue'
 import { slideImages } from '@/config/constants'
 
 const emit = defineEmits<{

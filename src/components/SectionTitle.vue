@@ -1,5 +1,5 @@
 <template>
-  <span class="custom-font-family relative">
+  <div class="custom-font-family relative">
     <slot />
-  </span>
+  </div>
 </template>
