@@ -24,7 +24,7 @@ watch(isPanelOpen, () => {
     <TheCrossLogo @click.prevent="togglePanel" />
     <div class="mt-[46px] flex flex-col gap-[22px] text-center">
       <a v-for="link in navLinks" :key="link.label" class="text-[24px] color-white uppercase decoration-none opacity-[0.8]" :href="link.href">{{ link.label }}</a>
-      <ChooseFlatBtn />
+      <ChooseFlatBtn>Выбрать квартиру</ChooseFlatBtn>
       <a class="mt-[16px] text-[24px] color-white decoration-none opacity-[0.8]" href="#">+7 (495) 185-13-82</a>
     </div>
   </div>

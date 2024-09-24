@@ -14,7 +14,9 @@ import Logo from '@/components/Logo.vue'
       </div>
     </BreakpointBlock>
     <BreakpointBlock :is-equal="false" breakpoint="sm">
-      <ChooseFlatBtn class="h-[55px] max-lg:h-[33px]" />
+      <ChooseFlatBtn class="h-[55px] max-lg:h-[33px]">
+        Выбрать квартиру
+      </ChooseFlatBtn>
       <div class="flex justify-end">
         <a class="whitespace-nowrap text-[24px] color-white font-500 decoration-none opacity-[0.8] transition-colors duration-200 hover:color-[var(--primary-link)]" href="#">
           +7 (495) 185-13-82

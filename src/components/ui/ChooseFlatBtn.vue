@@ -9,6 +9,6 @@ const attrs = useAttrs()
 
 <template>
   <a class="custom-gradient h-[40px] flex items-center justify-center gap-[12px] whitespace-nowrap rounded-60px px-[24px] py-[18px] text-lg color-white uppercase decoration-none" v-bind="attrs" href="#">
-    Выбрать квартиру
+    <slot />
   </a>
 </template>

@@ -5,6 +5,7 @@ import Leaf from '@/components/Leaf.vue'
 import Tabs from '@/components/ui/Tabs.vue'
 import { galleryTabItems } from '@/config/constants'
 import TheGalleryPlates from '@/components/gallery/TheGalleryPlates.vue'
+import BtnToPage from '@/components/ui/BtnToPage.vue'
 
 const currentTab = ref(0)
 
@@ -23,5 +24,8 @@ provide('currentTab', currentTab)
     </Title>
     <Tabs class="grid-cols-[repeat(2,1fr)] sm:grid-cols-[repeat(4,1fr)]" :current-tab="currentTab" :items="galleryTabItems" :change-event="updateTab" />
     <TheGalleryPlates />
+    <BtnToPage class="mt-[50px]">
+      Вся галерея
+    </BtnToPage>
   </div>
 </template>

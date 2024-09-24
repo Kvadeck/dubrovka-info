@@ -24,7 +24,7 @@ import Title from '@/components/SectionTitle.vue'
         <ComfortPlans />
       </div>
       <div class="relative max-w-[316px]">
-        <ChooseFlatBtn />
+        <ChooseFlatBtn>Выбрать квартиру</ChooseFlatBtn>
       </div>
     </BreakpointBlock>
     <BreakpointBlock breakpoint="lg" :is-equal="false">
