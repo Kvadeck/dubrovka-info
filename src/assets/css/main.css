@@ -44,6 +44,19 @@
     display: none;
 }
 
+.border-right {
+    border-right: 2px solid var(--secondary-gradient);
+    height: 100%;
+    position: absolute;
+    top: 0;
+}
+
+@media screen and (min-width:768px) {
+    .hide-last-border li:last-child .border-right {
+        display: none;
+    }
+}
+
 /* Carousel overrides */
 #main-carousel .carousel__prev,
 #main-carousel .carousel__next {
