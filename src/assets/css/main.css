@@ -57,6 +57,13 @@
     }
 }
 
+.advantages-list li .border-custom-right {
+    border-right: 2px solid var(--secondary-gradient);
+    height: 100%;
+    position: absolute;
+    top: 0;
+}
+
 /* Carousel overrides */
 #main-carousel .carousel__prev,
 #main-carousel .carousel__next {

@@ -1,6 +1,6 @@
 <template>
   <li class="gap-[19px]] flex flex-col pb-[19px]">
-    <div class="lg:pb-[20px]">
+    <div class="lg:pb-[12px]">
       <span class="relative text-[24px] color-black font-500 uppercase lg:text-[36px] lg:leading-[45px]">
         <slot name="title" />
       </span>

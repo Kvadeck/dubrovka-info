@@ -12,23 +12,12 @@ import jkSlide2l from '@/assets/img/jk-dubrovka-slides/slide2_large.jpg'
 import jkSlide1s from '@/assets/img/jk-dubrovka-slides/slide1_medium.jpg'
 import jkSlide2s from '@/assets/img/jk-dubrovka-slides/slide2_medium.jpg'
 
-import infraAll_l from '@/assets/img/infrastructure/all_large.jpg'
-import infraAll1_s from '@/assets/img/infrastructure/all_medium.jpg'
-
-import infraDosug_l from '@/assets/img/infrastructure/dosug_large.jpg'
-import infraDosug_s from '@/assets/img/infrastructure/dosug_medium.jpg'
-
-import infraEdu_l from '@/assets/img/infrastructure/edu_large.jpg'
-import infraEdu_s from '@/assets/img/infrastructure/edu_medium.jpg'
-
-import infraOther_l from '@/assets/img/infrastructure/other_large.jpg'
-import infraOther_s from '@/assets/img/infrastructure/other_medium.jpg'
-
-import infraShops_l from '@/assets/img/infrastructure/shops_large.jpg'
-import infraShops_s from '@/assets/img/infrastructure/shops_medium.jpg'
-
-import infraVeln_l from '@/assets/img/infrastructure/veln_large.jpg'
-import infraVeln_s from '@/assets/img/infrastructure/veln_medium.jpg'
+import infraAll from '@/assets/img/infrastructure/all.svg'
+import infraDosug from '@/assets/img/infrastructure/map_dosug.svg'
+import infraEdu from '@/assets/img/infrastructure/map_edu.svg'
+import infraOther from '@/assets/img/infrastructure/map_other.svg'
+import infraShops from '@/assets/img/infrastructure/map_shops.svg'
+import infraVeln from '@/assets/img/infrastructure/map_veln.svg'
 
 import the360 from '@/assets/img/360.svg'
 import document from '@/assets/img/document.svg'
@@ -41,8 +30,9 @@ export const breakpoints: { [key: string]: number } = {
 }
 
 interface SlideImage {
-  medium: string
-  large: string
+  medium?: string
+  large?: string
+  image?: string
 }
 
 export const slideImages: SlideImage[] = [
@@ -57,12 +47,12 @@ export const qualitySlideImages: SlideImage[] = [
 ]
 
 export const infrastructureImages: SlideImage[] = [
-  { medium: infraAll1_s, large: infraAll_l },
-  { medium: infraDosug_s, large: infraDosug_l },
-  { medium: infraEdu_s, large: infraEdu_l },
-  { medium: infraShops_s, large: infraShops_l },
-  { medium: infraVeln_s, large: infraVeln_l },
-  { medium: infraOther_s, large: infraOther_l },
+  { image: infraAll },
+  { image: infraDosug },
+  { image: infraEdu },
+  { image: infraShops },
+  { image: infraVeln },
+  { image: infraOther },
 ]
 
 interface navLink {
@@ -201,5 +191,28 @@ export const galleryPlateItems: galleryPlateItem[] = [
     first_description: 'Технология вентилируемых фасадов с дополнительным утеплением. Переменная этажность новостройки: 7-8 этажей. Монолитные стены и перекрытия. От 2 до 5 подъездов на новостройку. Эксплуатируемая кровля, покрытая защитным слоем.',
     second_title: 'Элегантность',
     second_description: 'Оригинальный дизайн фасадов новостроек, облицованный итальянским керамогранитом фабрики Italon. Архитектура зданий, выполненная с использованием высококачественного итальянского керамогранита и технологии вентилируемых фасадов, обеспечивает не только эстетическое наслаждение, но и дополнительную теплоизоляцию.',
+  },
+]
+
+export const advantagesList: SectionItem[] = [
+  {
+    title: '15 минут',
+    description: 'пешком до м. Ольховая',
+  },
+  {
+    title: '>30',
+    description: 'видов спорта для взрослых и детей',
+  },
+  {
+    title: '5-22',
+    description: 'этажей в домах',
+  },
+  {
+    title: 'до 192 м2',
+    description: 'площадь квартир',
+  },
+  {
+    title: 'до 6 метров',
+    description: 'высота потолков',
   },
 ]
