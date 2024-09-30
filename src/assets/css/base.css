@@ -2,11 +2,13 @@
   --primary-color: #392314;
   --secondary-color: #543E30;
   --third-color: #F1E8DE;
+  --four-color: #E5E5E5;
   --third-background: #F9F9F9;
   --primary-link: #E8C896;
   --primary-gradient: #DAB57B;
   --secondary-gradient: #C29A5C;
   --mobile-background: #2F2620;
+  --text-primary-color: #A3885F
 }
 
 *,
