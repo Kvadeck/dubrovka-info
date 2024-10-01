@@ -52,10 +52,10 @@
 }
 
 .custom-circle-plus::before {
+    display: none;
     position: absolute;
     content: '';
     border-radius: 50%;
-    display: block;
     width: 88px;
     height: 88px;
     background-color: var(--secondary-color);
@@ -72,7 +72,11 @@
         display: none;
     }
 }
-
+@media screen and (min-width:1280px) {
+    .custom-circle-plus::before {
+       display: block;
+    }
+}
 .advantages-list li .border-custom-right {
     border-right: 2px solid var(--secondary-gradient);
     height: 100%;

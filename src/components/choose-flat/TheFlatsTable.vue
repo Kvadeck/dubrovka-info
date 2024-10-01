@@ -1,59 +1,36 @@
 <script setup lang="ts">
+import type { addressItem } from '@/config/constants'
 
+interface Props {
+  buildings: addressItem[]
+}
+
+defineProps<Props>()
 </script>
 
 <template>
-  <div class="custom-circle-plus flex flex-col rounded-[22px] bg-white px-[30px] lg:absolute lg:bottom-[10%] lg:right-[10%] lg:h-[380px] lg:w-[430px] lg:pb-[30px] lg:pt-[50px]">
-    <div class="text-center color-[var(--secondary-color)] font-500 lg:mb-[46px] lg:ml-5 lg:text-[28px]">
+  <div class="custom-circle-plus relative flex flex-col rounded-[22px] bg-white px-[20px] md:max-w-[470px] md:min-w-[280px] lg:px-[30px] lg:pb-[30px] lg:pt-[50px] md:pb-[20px]">
+    <div class="text-center color-[var(--secondary-color)] font-500 max-md:my-[20px] lg:mb-[46px] lg:ml-5 md:mt-[20px] lg:text-[28px]">
       ЖК «Дубровка»
     </div>
-    <div class="grid mb-[10px] justify-center text-center color-[var(--text-primary-color)] lg:grid-cols-[10%_40%_40%] lg:text-[18px]">
+    <div />
+    <div class="grid grid-cols-[15%_40%_40%] mb-[10px] justify-center whitespace-nowrap text-center color-[var(--text-primary-color)] lg:gap-[5px] lg:text-[18px]">
       <div>Тип</div>
       <div>Стоимость</div>
       <div>В продаже</div>
     </div>
-
-    <div class="relative grid h-full max-h-[180px] justify-center gap-[5px] overflow-y-auto text-center lg:grid-cols-[10%_40%_40%] lg:text-[18px]">
-      <div>1к</div>
-      <div>14 890 793 ₽</div>
-      <div>11</div>
-
-      <div>2к</div>
-      <div>23 694 048 ₽</div>
-      <div>14</div>
-
-      <div>3к</div>
-      <div>26 143 143 ₽</div>
-      <div>1</div>
-      <div>1к</div>
-      <div>14 890 793 ₽</div>
-      <div>11</div>
-
-      <div>2к</div>
-      <div>23 694 048 ₽</div>
-      <div>14</div>
-
-      <div>3к</div>
-      <div>26 143 143 ₽</div>
-      <div>1</div><div>1к</div>
-      <div>14 890 793 ₽</div>
-      <div>11</div>
-
-      <div>2к</div>
-      <div>23 694 048 ₽</div>
-      <div>14</div>
-
-      <div>3к</div>
-      <div>26 143 143 ₽</div>
-      <div>1</div>
-
-      <div>4к</div>
-      <div>20 143 143 ₽</div>
-      <div>10</div>
+    <div class="relative grid grid-cols-[15%_40%_40%] h-full max-h-[200px] justify-center gap-[5px] overflow-y-auto text-center lg:max-h-[180px] lg:text-[18px] md:text-[14px]">
+      <template v-for="item in buildings" :key="item.address">
+        <template v-for="el in item.items" :key="el.type">
+          <div>{{ el.type }}</div>
+          <div class="whitespace-nowrap">
+            {{ el.price }}
+          </div>
+          <div>
+            {{ el.at_sale }}
+          </div>
+        </template>
+      </template>
     </div>
   </div>
 </template>
-
-<style scoped>
-
-</style>

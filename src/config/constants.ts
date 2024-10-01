@@ -216,3 +216,105 @@ export const advantagesList: SectionItem[] = [
     description: 'высота потолков',
   },
 ]
+
+export interface addressItem {
+  address: string
+  items: buildingItem[]
+}
+
+export interface buildingItem {
+  type: string
+  price: string
+  at_sale: string
+}
+
+export const buildings: addressItem[] = [
+  {
+    address: 'Ясеневая 9',
+    items: [
+      {
+        type: '1к',
+        price: '14 890 793',
+        at_sale: '3',
+      },
+      {
+        type: '2к',
+        price: '23 694 048',
+        at_sale: '12',
+      },
+    ],
+  },
+  {
+    address: 'Ясеневая дом 5 корп 1',
+    items: [
+      {
+        type: '3к',
+        price: '36 234 600',
+        at_sale: '1',
+      },
+    ],
+  },
+  {
+    address: 'Ясеневая 7',
+    items: [
+      {
+        type: '3к',
+        price: '33 969 449',
+        at_sale: '3',
+      },
+    ],
+  },
+  {
+    address: 'Ясеневая дом 5',
+    items: [
+      {
+        type: '3к',
+        price: '34 016 142',
+        at_sale: '2',
+      },
+    ],
+  },
+  {
+    address: 'Ясеневая 3 корп 1',
+    items: [
+      {
+        type: '1к',
+        price: '15 002 579',
+        at_sale: '8',
+      },
+      {
+        type: '2к',
+        price: '24 476 020',
+        at_sale: '2',
+      },
+      {
+        type: '3к',
+        price: '26 143 143',
+        at_sale: '7',
+      },
+      {
+        type: '4к',
+        price: '40 524 046',
+        at_sale: '1',
+      },
+    ],
+  },
+  {
+    address: 'Ясеневая 3',
+    items: [],
+  },
+  {
+    address: 'Ясеневая дом 1 корп 1',
+    items: [
+      {
+        type: '3к',
+        price: '37 582 251',
+        at_sale: '1',
+      },
+    ],
+  },
+  {
+    address: 'Ясеневая дом 1',
+    items: [],
+  },
+]
