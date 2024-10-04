@@ -1,5 +1,15 @@
 <script setup lang="ts">
+import { ref } from 'vue'
 import RangeCost from '@/components/ui/RangeCost.vue'
+import { MAX_COST_PRICE, MIN_COST_PRICE } from '@/config/constants'
+import { formatDigitWithSpaces } from '@/utils/main'
+
+const min = ref(formatDigitWithSpaces(MIN_COST_PRICE))
+const max = ref(formatDigitWithSpaces((MAX_COST_PRICE / 2).toString()))
+
+function updateCostIntervals(event: { max: string }) {
+  max.value = formatDigitWithSpaces(event.max)
+}
 </script>
 
 <template>
@@ -12,14 +22,14 @@ import RangeCost from '@/components/ui/RangeCost.vue'
     </span>
     <div class="flex gap-[10px] lg:pb-[36px]">
       <div class="w-full flex select-none items-center border-[1px] border-[var(--four-color)] rounded-[50px] border-solid bg-[white] bg-white/10 pl-[20px] lg:h-[63px] max-md:h-[40px] lg:text-[28px] md:color-white">
-        от
+        <span class="text-[18px]">от:</span>&nbsp;{{ min }}
       </div>
       <div class="w-full flex select-none items-center border-[1px] border-[var(--four-color)] rounded-[50px] border-solid bg-[white] bg-white/10 pl-[20px] lg:h-[63px] lg:text-[28px] md:color-white">
-        до
+        <span class="text-[18px]">до:</span>&nbsp;{{ max }}
       </div>
     </div>
     <div class="max-md:px-[20px]">
-      <RangeCost />
+      <RangeCost @change-cost="updateCostIntervals($event)" />
     </div>
   </div>
 </template>

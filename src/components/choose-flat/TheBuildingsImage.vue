@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import Map from '@/assets/img/choose-flat/map.jpeg'
+import map from '@/assets/img/choose-flat/map.jpeg'
 </script>
 
 <template>
@@ -23,7 +23,7 @@ import Map from '@/assets/img/choose-flat/map.jpeg'
       <clipPath id="clip0_2_25">
         <rect width="1920" height="825" fill="white" />
       </clipPath>
-      <image id="image0_2_25" width="1920" height="825" :xlink:href="Map" />
+      <image id="image0_2_25" width="1920" height="825" :xlink:href="map" />
     </defs>
   </svg>
 </template>

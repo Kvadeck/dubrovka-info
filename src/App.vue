@@ -9,7 +9,7 @@ import TheDubrovkaInfo from '@/components/dubrovka/TheDubrovka.vue'
 import TheGallery from '@/components/gallery/TheGalleryMain.vue'
 import InfrastructureMain from '@/components/infrastructure/InfrastructureMain.vue'
 import AdvantagesList from '@/components/advantages/AdvantagesList.vue'
-import TheBuildingsLayer from '@/components/choose-flat/TheBuildingsLayer.vue'
+import TheBuildings from '@/components/choose-flat/TheBuildingsMain.vue'
 
 const currentSlide = ref(1)
 
@@ -41,6 +41,6 @@ function updateCurrentSlide(value: number) {
     <AdvantagesList />
   </section>
   <section class="relative bg-[var(--third-background)] py-[35px] pb-[35px] lg:px-[70px] lg:py-[40px] max-md:px-[20px] md:px-[35px]">
-    <TheBuildingsLayer />
+    <TheBuildings />
   </section>
 </template>

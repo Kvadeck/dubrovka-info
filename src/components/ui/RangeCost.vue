@@ -1,18 +1,27 @@
 <script setup lang="ts">
 import { ref } from 'vue'
+import { MAX_COST_PRICE, MIN_COST_PRICE } from '@/config/constants'
 
-const rangeVal = ref(50)
+const emit = defineEmits<{
+  changeCost: [cost: { min: string, max: string }]
+}>()
 
-function setFillGradient(event: Event) {
+const min = MIN_COST_PRICE
+const max = MAX_COST_PRICE
+
+const rangeVal = ref(MAX_COST_PRICE / 2)
+
+function setValues(event: Event) {
   const target = event.target as HTMLInputElement
   rangeVal.value = (
     ((Number(target.value) - Number(target.min)) / (Number(target.max) - Number(target.min))) * 100
   )
+  emit('changeCost', { min: target.min, max: target.value })
 }
 </script>
 
 <template>
-  <input :style="{ background: `linear-gradient(to right, var(--secondary-gradient) ${rangeVal}%, var(--four-color) ${rangeVal}%)` }" class="range-cost w-full" type="range" :value="rangeVal" name="volume" min="0" max="100" @input="setFillGradient">
+  <input :style="{ background: `linear-gradient(to right, var(--secondary-gradient) ${rangeVal}%, var(--four-color) ${rangeVal}%)` }" class="range-cost w-full" type="range" :value="rangeVal" name="volume" :min="min" :max="max" @input="setValues">
 </template>
 
 <style scoped>

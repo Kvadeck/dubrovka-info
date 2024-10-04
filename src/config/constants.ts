@@ -22,6 +22,7 @@ import infraVeln from '@/assets/img/infrastructure/map_veln.svg'
 import the360 from '@/assets/img/360.svg'
 import document from '@/assets/img/document.svg'
 import metro from '@/assets/img/metro.svg'
+import { returnAllPrices } from '@/utils/main'
 
 export const breakpoints: { [key: string]: number } = {
   sm: 0,
@@ -224,7 +225,7 @@ export interface addressItem {
 
 export interface buildingItem {
   type: string
-  price: string
+  price: string | number
   at_sale: string
 }
 
@@ -318,3 +319,7 @@ export const buildings: addressItem[] = [
     items: [],
   },
 ]
+
+const allPrices = returnAllPrices(buildings)
+export const MIN_COST_PRICE = '1000000'
+export const MAX_COST_PRICE = Math.round(Math.max(...allPrices))
