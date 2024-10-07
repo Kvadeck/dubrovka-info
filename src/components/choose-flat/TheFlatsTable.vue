@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import type { addressItem } from '@/config/constants'
+import { formatFlatPrice } from '@/utils/main'
 
 interface Props {
   buildings: addressItem[]
@@ -24,7 +25,7 @@ defineProps<Props>()
         <template v-for="el in item.items" :key="el.type">
           <div>{{ el.type }}</div>
           <div class="whitespace-nowrap">
-            {{ el.price }}
+            от {{ formatFlatPrice(el.price) }} ₽
           </div>
           <div>
             {{ el.at_sale }}

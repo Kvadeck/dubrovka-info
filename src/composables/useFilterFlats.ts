@@ -25,5 +25,6 @@ export function useFilterFlats(flats: Ref<addressItem[]>) {
   return {
     filteredFlats,
     updateFilter,
+    filterBy,
   }
 }

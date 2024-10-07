@@ -27,3 +27,33 @@ export const returnAllPrices = function (buildings: addressItem[]) {
 export const formatDigitWithSpaces = function (digit: string) {
   return digit.replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1 ')
 }
+
+export const resetMarkers = function (markers: { [key: string]: boolean }) {
+  for (const key in markers) {
+    if (Object.prototype.hasOwnProperty.call(markers, key)) {
+      markers[key] = false
+    }
+  }
+  return markers
+}
+
+export const formatFlatPrice = function (num: number | string) {
+  let result
+
+  if (typeof num === 'string') {
+    result = Number.parseInt(num)
+  }
+  else {
+    result = num
+    if (result >= 1_000_000_000) {
+      result = `${(result / 1_000_000_000).toFixed(1)} млрд`
+    }
+    else if (result >= 1_000_000) {
+      result = `${(result / 1_000_000).toFixed(1)} млн`
+    }
+    else if (result >= 1_000) {
+      result = `${(result / 1_000).toFixed(1)} тыс`
+    }
+    return result.toString().replace('.', ',')
+  }
+}

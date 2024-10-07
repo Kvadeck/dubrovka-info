@@ -9,7 +9,7 @@ import { buildings } from '@/config/constants'
 import { useFilterFlats } from '@/composables/useFilterFlats'
 
 const buildingItems = ref(buildings)
-const { filteredFlats, updateFilter } = useFilterFlats(buildingItems)
+const { filteredFlats, updateFilter, filterBy } = useFilterFlats(buildingItems)
 </script>
 
 <template>
@@ -17,7 +17,7 @@ const { filteredFlats, updateFilter } = useFilterFlats(buildingItems)
     Выбери свою квартиру
   </SectionTitle>
   <div class="relative">
-    <TheBuildingsImage />
+    <TheBuildingsImage :active-filters="filterBy" :buildings="filteredFlats" />
     <div class="bottom-[10%] grid items-end gap-[30px] md:absolute lg:bottom-[10%] md:grid-cols-[repeat(3,1fr)] md:gap-[40px] lg:px-[60px] md:px-[30px]">
       <TheCostRange @change-cost="updateFilter('')" />
       <TheRoomSelect @change-room="updateFilter(`${$event}к`)" />

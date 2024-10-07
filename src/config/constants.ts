@@ -320,6 +320,5 @@ export const buildings: addressItem[] = [
   },
 ]
 
-const allPrices = returnAllPrices(buildings)
-export const MIN_COST_PRICE = '1000000'
-export const MAX_COST_PRICE = Math.round(Math.max(...allPrices))
+export const MIN_COST_PRICE: string = '0'
+export const MAX_COST_PRICE: string = Math.round(Math.max(...returnAllPrices(buildings))).toString()
