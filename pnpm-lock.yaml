@@ -8,9 +8,6 @@ importers:
 
   .:
     dependencies:
-      '@spreadtheweb/multi-range-slider':
-        specifier: ^1.0.3
-        version: 1.0.3
       '@unocss/preset-uno':
         specifier: ^0.62.3
         version: 0.62.3
@@ -744,9 +741,6 @@ packages:
   '@rushstack/eslint-patch@1.10.4':
     resolution: {integrity: sha512-WJgX9nzTqknM393q1QJDJmoW28kUfEnybeTfVNcNAPnIx210RXm2DiXiHzfNPJNIUUb1tJnz/l4QGtJ30PgWmA==}
 
-  '@spreadtheweb/multi-range-slider@1.0.3':
-    resolution: {integrity: sha512-1usIwwxZGvXhtaQlxjzlj38lsuM3j0y9MSCRjsmkZ5Wt01TDPds96k4cGR93wgWaAjLf5+AVWK59hYWAs1ZVkQ==}
-
   '@stylistic/eslint-plugin@2.7.2':
     resolution: {integrity: sha512-3DVLU5HEuk2pQoBmXJlzvrxbKNpu2mJ0SRqz5O/CJjyNCr12ZiPcYMEtuArTyPOk5i7bsAU44nywh1rGfe3gKQ==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
@@ -1264,11 +1258,6 @@ packages:
 
   core-js-compat@3.38.1:
     resolution: {integrity: sha512-JRH6gfXxGmrzF3tZ57lFx97YARxCXPaMzPo6jELZhv88pBH5VXpQ+y0znKGlFnzuaihqhLbefxSJxWJMPtfDzw==}
-
-  cross-env@7.0.3:
-    resolution: {integrity: sha512-+/HKd6EgcQCJGh2PSjZuUitQBQynKor4wrFbRg4DtAgS1aWO+gU52xpH7M9ScGgXSYmAVS9bIJ8EzuaGw0oNAw==}
-    engines: {node: '>=10.14', npm: '>=6', yarn: '>=1'}
-    hasBin: true
 
   cross-spawn@7.0.3:
     resolution: {integrity: sha512-iRDPJKUPVEND7dHPO8rkbOnPpyDygcDFtWjpeWNCgy8WP2rXcxXL8TskReQl6OrB2G7+UJrags1q15Fudc7G6w==}
@@ -3029,10 +3018,6 @@ snapshots:
 
   '@rushstack/eslint-patch@1.10.4': {}
 
-  '@spreadtheweb/multi-range-slider@1.0.3':
-    dependencies:
-      cross-env: 7.0.3
-
   '@stylistic/eslint-plugin@2.7.2(eslint@8.55.0)(typescript@5.4.5)':
     dependencies:
       '@types/eslint': 9.6.1
@@ -3720,10 +3705,6 @@ snapshots:
   core-js-compat@3.38.1:
     dependencies:
       browserslist: 4.23.3
-
-  cross-env@7.0.3:
-    dependencies:
-      cross-spawn: 7.0.3
 
   cross-spawn@7.0.3:
     dependencies:

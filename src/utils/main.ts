@@ -28,7 +28,7 @@ export const formatDigitWithSpaces = function (digit: string) {
   return digit.replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1 ')
 }
 
-export const resetMarkers = function (markers: { [key: string]: boolean }) {
+export const resetMarkers = function (markers: Record<string, boolean>) {
   for (const key in markers) {
     if (Object.prototype.hasOwnProperty.call(markers, key)) {
       markers[key] = false
@@ -40,20 +40,24 @@ export const resetMarkers = function (markers: { [key: string]: boolean }) {
 export const formatFlatPrice = function (num: number | string) {
   let result
 
-  if (typeof num === 'string') {
-    result = Number.parseInt(num)
+  result = (typeof num === 'string') ? Number.parseInt(num) : num
+
+  if (result >= 1_000_000_000) {
+    result = `${(result / 1_000_000_000).toFixed(1)} млрд`
   }
-  else {
-    result = num
-    if (result >= 1_000_000_000) {
-      result = `${(result / 1_000_000_000).toFixed(1)} млрд`
-    }
-    else if (result >= 1_000_000) {
-      result = `${(result / 1_000_000).toFixed(1)} млн`
-    }
-    else if (result >= 1_000) {
-      result = `${(result / 1_000).toFixed(1)} тыс`
-    }
-    return result.toString().replace('.', ',')
+  else if (result >= 1_000_000) {
+    result = `${(result / 1_000_000).toFixed(1)} млн`
+  }
+  else if (result >= 1_000) {
+    result = `${(result / 1_000).toFixed(1)} тыс`
+  }
+  return result.toString().replace('.', ',')
+}
+
+export const debounce = function <T extends (...args: any[]) => any>(func: T, wait: number) {
+  let timeout: ReturnType<typeof setTimeout>
+  return (...args: Parameters<T>) => {
+    clearTimeout(timeout)
+    timeout = setTimeout(() => func(...args), wait)
   }
 }

@@ -7,9 +7,16 @@ import SectionTitle from '@/components/SectionTitle.vue'
 import TheCostRange from '@/components/choose-flat/TheCostRange.vue'
 import { buildings } from '@/config/constants'
 import { useFilterFlats } from '@/composables/useFilterFlats'
+import { debounce } from '@/utils/main'
 
 const buildingItems = ref(buildings)
+
 const { filteredFlats, updateFilter, filterBy } = useFilterFlats(buildingItems)
+
+function updatePrice(event: { min: number, max: number }) {
+  const debouncedUpdateFilter = debounce(updateFilter, 500)
+  debouncedUpdateFilter(event)
+}
 </script>
 
 <template>
@@ -19,7 +26,7 @@ const { filteredFlats, updateFilter, filterBy } = useFilterFlats(buildingItems)
   <div class="relative">
     <TheBuildingsImage :active-filters="filterBy" :buildings="filteredFlats" />
     <div class="bottom-[10%] grid items-end gap-[30px] md:absolute lg:bottom-[10%] md:grid-cols-[repeat(3,1fr)] md:gap-[40px] lg:px-[60px] md:px-[30px]">
-      <TheCostRange @change-cost="updateFilter('')" />
+      <TheCostRange @change-price="updatePrice($event)" />
       <TheRoomSelect @change-room="updateFilter(`${$event}к`)" />
       <TheFlatsTable :buildings="filteredFlats" />
     </div>

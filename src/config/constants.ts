@@ -235,12 +235,12 @@ export const buildings: addressItem[] = [
     items: [
       {
         type: '1к',
-        price: '14 890 793',
+        price: '14890793',
         at_sale: '3',
       },
       {
         type: '2к',
-        price: '23 694 048',
+        price: '23694048',
         at_sale: '12',
       },
     ],
@@ -250,7 +250,7 @@ export const buildings: addressItem[] = [
     items: [
       {
         type: '3к',
-        price: '36 234 600',
+        price: '36234600',
         at_sale: '1',
       },
     ],
@@ -260,7 +260,7 @@ export const buildings: addressItem[] = [
     items: [
       {
         type: '3к',
-        price: '33 969 449',
+        price: '33969449',
         at_sale: '3',
       },
     ],
@@ -270,7 +270,7 @@ export const buildings: addressItem[] = [
     items: [
       {
         type: '3к',
-        price: '34 016 142',
+        price: '34016142',
         at_sale: '2',
       },
     ],
@@ -280,22 +280,22 @@ export const buildings: addressItem[] = [
     items: [
       {
         type: '1к',
-        price: '15 002 579',
+        price: '15002579',
         at_sale: '8',
       },
       {
         type: '2к',
-        price: '24 476 020',
+        price: '24476020',
         at_sale: '2',
       },
       {
         type: '3к',
-        price: '26 143 143',
+        price: '26143143',
         at_sale: '7',
       },
       {
         type: '4к',
-        price: '40 524 046',
+        price: '40524046',
         at_sale: '1',
       },
     ],
@@ -309,7 +309,7 @@ export const buildings: addressItem[] = [
     items: [
       {
         type: '3к',
-        price: '37 582 251',
+        price: '37582251',
         at_sale: '1',
       },
     ],
@@ -322,3 +322,4 @@ export const buildings: addressItem[] = [
 
 export const MIN_COST_PRICE: string = '0'
 export const MAX_COST_PRICE: string = Math.round(Math.max(...returnAllPrices(buildings))).toString()
+export const COST_STEP: number = 1000
