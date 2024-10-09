@@ -2,9 +2,15 @@
 import { onMounted, ref } from 'vue'
 import { COST_STEP, MAX_COST_PRICE, MIN_COST_PRICE } from '@/config/constants'
 
+interface changePriceEmit {
+  min: number
+  max: number
+}
+
 const emit = defineEmits<{
-  changeMinPrice: [value: number]
-  changeMaxPrice: [value: number]
+  (e: 'changePrice', minmax: changePriceEmit): void
+  (e: 'changeMaxPrice', value: number): void
+  (e: 'changeMinPrice', value: number): void
 }>()
 
 const min = ref(Number(MIN_COST_PRICE))
@@ -46,6 +52,7 @@ onMounted(() => {
           step="100"
           class="pointer-events-none absolute z-20 h-2 w-full cursor-pointer appearance-none opacity-0"
           @input="minTrigger"
+          @change="emit('changePrice', { min: definedMin, max: definedMax })"
         >
         <input
           v-model="definedMax"
@@ -55,6 +62,7 @@ onMounted(() => {
           step="100"
           class="pointer-events-none absolute z-20 h-2 w-full cursor-pointer appearance-none opacity-0"
           @input="maxTrigger"
+          @change="emit('changePrice', { min: definedMin, max: definedMax })"
         >
         <div class="relative z-10 h-2">
           <div class="absolute bottom-0 left-0 right-0 top-0 z-10 rounded-md bg-[var(--four-color)]" />

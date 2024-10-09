@@ -7,15 +7,13 @@ import SectionTitle from '@/components/SectionTitle.vue'
 import TheCostRange from '@/components/choose-flat/TheCostRange.vue'
 import { buildings } from '@/config/constants'
 import { useFilterFlats } from '@/composables/useFilterFlats'
-import { debounce } from '@/utils/main'
 
 const buildingItems = ref(buildings)
 
 const { filteredFlats, updateFilter, filterBy } = useFilterFlats(buildingItems)
 
 function updatePrice(event: { min: number, max: number }) {
-  const debouncedUpdateFilter = debounce(updateFilter, 500)
-  debouncedUpdateFilter(event)
+  updateFilter(event)
 }
 </script>
 

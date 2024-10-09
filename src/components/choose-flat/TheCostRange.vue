@@ -1,20 +1,19 @@
 <script setup lang="ts">
-import { ref, watch } from 'vue'
+import { ref } from 'vue'
 import { formatDigitWithSpaces } from '@/utils/main'
 import RangeCost from '@/components/ui/RangeCost.vue'
 import { MAX_COST_PRICE, MIN_COST_PRICE } from '@/config/constants'
+
+const emit = defineEmits<{
+  (e: 'changePrice', minmax: changePriceEmit): void
+}>()
+const min = ref(MIN_COST_PRICE)
+const max = ref(MAX_COST_PRICE)
 
 interface changePriceEmit {
   min: number
   max: number
 }
-
-const emit = defineEmits<{
-  (e: 'changePrice', minmax: changePriceEmit): void
-}>()
-
-const min = ref(MIN_COST_PRICE)
-const max = ref(MAX_COST_PRICE)
 
 function updateMinPrice(value: number) {
   min.value = value.toString()
@@ -24,9 +23,9 @@ function updateMaxPrice(value: number) {
   max.value = value.toString()
 }
 
-watch([min, max], () => {
-  emit('changePrice', { min: Number(min.value), max: Number(max.value) })
-})
+function updatePrice(event: { min: number, max: number }) {
+  emit('changePrice', event)
+}
 </script>
 
 <template>
@@ -46,7 +45,7 @@ watch([min, max], () => {
       </div>
     </div>
     <div class="relative max-md:px-[20px]">
-      <RangeCost @change-min-price="updateMinPrice($event)" @change-max-price="updateMaxPrice($event)" />
+      <RangeCost @change-price="updatePrice($event)" @change-min-price="updateMinPrice($event)" @change-max-price="updateMaxPrice($event)" />
     </div>
   </div>
 </template>

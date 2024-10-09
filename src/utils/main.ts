@@ -61,3 +61,13 @@ export const debounce = function <T extends (...args: any[]) => any>(func: T, wa
     timeout = setTimeout(() => func(...args), wait)
   }
 }
+
+type PriceRange = { min: number, max: number } | undefined
+
+export const findPriceInterval = function (
+  price: string | number,
+  range: PriceRange,
+): boolean {
+  const itemPrice = Number(price)
+  return range !== undefined && itemPrice >= range.min && itemPrice <= range.max
+}
