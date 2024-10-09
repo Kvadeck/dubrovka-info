@@ -13,8 +13,8 @@ import TheBuildings from '@/components/choose-flat/TheBuildingsMain.vue'
 
 const currentSlide = ref(1)
 
-function updateCurrentSlide(value: number) {
-  currentSlide.value = value + 1
+function updateCurrentSlide(currentSlideIndex: any): void {
+  currentSlide.value = currentSlideIndex.currentSlideIndex + 1
 }
 </script>
 

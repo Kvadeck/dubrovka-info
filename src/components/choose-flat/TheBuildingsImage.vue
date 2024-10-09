@@ -5,9 +5,11 @@ import map from '@/assets/img/choose-flat/map.jpeg'
 import type { addressItem } from '@/config/constants'
 import { resetMarkers } from '@/utils/main'
 
+type Filter = string | { min: number, max: number }
+
 interface Props {
   buildings: addressItem[]
-  activeFilters: string[]
+  activeFilters: Filter[]
 }
 
 const props = defineProps<Props>()

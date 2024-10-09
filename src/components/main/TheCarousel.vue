@@ -5,11 +5,11 @@ import SlidePicture from '@/components/ui/PictureImg.vue'
 import { slideImages } from '@/config/constants'
 
 const emit = defineEmits<{
-  getCurrentSlide: [slide: number]
+  getCurrentSlide: [slide: unknown]
 }>()
 
-function handleSlideEnd(data: { currentSlideIndex: number }) {
-  emit('getCurrentSlide', data.currentSlideIndex)
+function handleSlideEnd(data: any) {
+  emit('getCurrentSlide', data)
 }
 </script>
 
