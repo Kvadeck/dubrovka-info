@@ -1,5 +1,6 @@
 import type { Ref, UnwrapRef } from 'vue'
 import type { addressItem } from '@/config/constants'
+import { COST_STEP } from '@/config/constants'
 
 export const filterByType = function (buildings: Ref<UnwrapRef<addressItem[]>>, type: string): addressItem[] {
   return buildings.value
@@ -11,13 +12,9 @@ export const filterByType = function (buildings: Ref<UnwrapRef<addressItem[]>>, 
 }
 
 export const returnAllPrices = function (buildings: addressItem[]) {
-  const result: number[] = []
+  const result: string[] = []
   buildings.forEach((el) => {
     el.items.forEach((item) => {
-      if (typeof item.price !== 'number') {
-        // Replace spaces in the price and convert to a number
-        item.price = Number.parseInt(item.price.replace(/ /g, ''), 10)
-      }
       result.push(item.price)
     })
   })
@@ -62,12 +59,12 @@ export const debounce = function <T extends (...args: any[]) => any>(func: T, wa
   }
 }
 
-type PriceRange = { min: number, max: number } | undefined
+interface FilterPrice { min: string, max: string }
 
 export const findPriceInterval = function (
-  price: string | number,
-  range: PriceRange,
+  price: string,
+  range: UnwrapRef<FilterPrice>,
 ): boolean {
   const itemPrice = Number(price)
-  return range !== undefined && itemPrice >= range.min && itemPrice <= range.max
+  return range !== undefined && itemPrice >= Number(range.min) && itemPrice <= Number(range.max) + COST_STEP
 }

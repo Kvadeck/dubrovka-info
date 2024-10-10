@@ -41,8 +41,8 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="flex items-center justify-center">
-    <div class="relative max-w-xl w-full">
+  <div class="flex items-center md:justify-center">
+    <div class="relative max-w-sm w-full max-lg:mt-[20px] md:max-w-xl">
       <div>
         <input
           v-model="definedMin"
@@ -67,8 +67,8 @@ onMounted(() => {
         <div class="relative z-10 h-2">
           <div class="absolute bottom-0 left-0 right-0 top-0 z-10 rounded-md bg-[var(--four-color)]" />
           <div :style="{ right: `${maxThumbStyle}%`, left: `${minThumbStyle}%` }" class="absolute bottom-0 top-0 z-20 rounded-md bg-[var(--secondary-gradient)]" />
-          <div :style="{ left: `${minThumbStyle}%` }" class="absolute left-0 top-0 z-30 h-6 w-6 rounded-full bg-[var(--secondary-gradient)] -ml-1 -mt-2" />
-          <div :style="{ right: `${maxThumbStyle}%` }" class="absolute right-0 top-0 z-30 h-6 w-6 rounded-full bg-[var(--secondary-gradient)] -mr-3 -mt-2" />
+          <div :style="{ left: `${minThumbStyle}%` }" class="absolute left-0 top-0 z-30 h-4 w-4 rounded-full bg-[var(--secondary-gradient)] -ml-1 -mt-[4px] lg:h-6 lg:w-6 lg:-mt-2" />
+          <div :style="{ right: `${maxThumbStyle}%` }" class="absolute right-0 top-0 z-30 h-4 w-4 rounded-full bg-[var(--secondary-gradient)] -mr-3 -mt-[4px] lg:h-6 lg:w-6 lg:-mt-2" />
         </div>
       </div>
     </div>

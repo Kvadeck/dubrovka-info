@@ -225,7 +225,7 @@ export interface addressItem {
 
 export interface buildingItem {
   type: string
-  price: string | number
+  price: string
   at_sale: string
 }
 
@@ -321,5 +321,5 @@ export const buildings: addressItem[] = [
 ]
 
 export const MIN_COST_PRICE: string = '0'
-export const MAX_COST_PRICE: string = Math.round(Math.max(...returnAllPrices(buildings))).toString()
+export const MAX_COST_PRICE: string = Math.max(...returnAllPrices(buildings).map(Number)).toString()
 export const COST_STEP: number = 1000

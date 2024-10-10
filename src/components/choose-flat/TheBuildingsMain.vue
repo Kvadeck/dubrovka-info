@@ -10,11 +10,7 @@ import { useFilterFlats } from '@/composables/useFilterFlats'
 
 const buildingItems = ref(buildings)
 
-const { filteredFlats, updateFilter, filterBy } = useFilterFlats(buildingItems)
-
-function updatePrice(event: { min: number, max: number }) {
-  updateFilter(event)
-}
+const { filteredFlats, updateFilter, filterByType } = useFilterFlats(buildingItems)
 </script>
 
 <template>
@@ -22,9 +18,9 @@ function updatePrice(event: { min: number, max: number }) {
     Выбери свою квартиру
   </SectionTitle>
   <div class="relative">
-    <TheBuildingsImage :active-filters="filterBy" :buildings="filteredFlats" />
+    <TheBuildingsImage :active-filters="filterByType" :buildings="filteredFlats" />
     <div class="bottom-[10%] grid items-end gap-[30px] md:absolute lg:bottom-[10%] md:grid-cols-[repeat(3,1fr)] md:gap-[40px] lg:px-[60px] md:px-[30px]">
-      <TheCostRange @change-price="updatePrice($event)" />
+      <TheCostRange @change-price="updateFilter({ min: $event.min.toString(), max: $event.max.toString() })" />
       <TheRoomSelect @change-room="updateFilter(`${$event}к`)" />
       <TheFlatsTable :buildings="filteredFlats" />
     </div>

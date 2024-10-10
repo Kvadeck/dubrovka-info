@@ -10,7 +10,7 @@ defineProps<Props>()
 </script>
 
 <template>
-  <div class="custom-circle-plus relative flex flex-col rounded-[22px] bg-white px-[20px] lg:h-[380px] md:max-w-[470px] md:min-w-[280px] lg:px-[30px] lg:pb-[30px] lg:pt-[50px] md:pb-[20px]">
+  <div class="custom-circle-plus relative h-[200px] md:min-w-[300px] flex flex-col rounded-[22px] bg-white px-[20px] lg:h-[380px] md:h-[200px] lg:px-[30px] lg:pb-[30px] lg:pt-[50px] md:pb-[20px]">
     <div class="text-center color-[var(--secondary-color)] font-500 max-md:my-[20px] lg:mb-[46px] lg:ml-5 md:mt-[20px] lg:text-[28px]">
       ЖК «Дубровка»
     </div>

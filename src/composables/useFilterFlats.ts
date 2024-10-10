@@ -1,52 +1,55 @@
 import type { Ref } from 'vue'
 import { computed, ref } from 'vue'
 import type { addressItem } from '@/config/constants'
+import { MAX_COST_PRICE, MIN_COST_PRICE } from '@/config/constants'
 import { findPriceInterval } from '@/utils/main'
 
 export function useFilterFlats(flats: Ref<addressItem[]>) {
-  type Filter = string | { min: number, max: number }
+  interface FilterPrice { min: string, max: string }
+  type Filter = string | { min: string, max: string }
 
-  const filterBy = ref<Filter[]>([])
+  const filterByType = ref<string[]>([])
+  const filterByPrice = ref<FilterPrice>({ min: MIN_COST_PRICE, max: MAX_COST_PRICE })
 
   const filteredFlats = computed(() => {
-    return flats.value.map((address) => {
+    const filteredByType = flats.value.map((address) => {
       return {
         ...address,
         items: address.items.filter((flat) => {
-          return !filterBy.value.length
-            || filterBy.value.includes(flat.type)
-            || findPriceInterval(flat.price, (filterBy.value.find(item => typeof item === 'object')) as { min: number, max: number } | undefined)
+          return !filterByType.value.length || filterByType.value.includes(flat.type)
         }),
       }
-    }).filter(building => building.items.length > 0)
+    })
+    const filteredByPrice = filteredByType.map((address) => {
+      return {
+        ...address,
+        items: address.items.filter((flat) => {
+          return findPriceInterval(flat.price, filterByPrice.value)
+        }),
+      }
+    })
+    return filteredByPrice.filter(building => building.items.length > 0)
   })
 
   const updateFilter = (filter: Filter): void => {
     if (typeof filter === 'string') {
-      const index = filterBy.value.indexOf(filter)
+      const index = filterByType.value.indexOf(filter)
       if (index !== -1) {
-        filterBy.value.splice(index, 1)
+        filterByType.value.splice(index, 1)
       }
       else {
-        filterBy.value.push(filter)
+        filterByType.value.push(filter)
       }
     }
     else {
-      const objectIndex = filterBy.value.findIndex(item =>
-        typeof item === 'object' && item !== null,
-      )
-      if (objectIndex === -1) {
-        filterBy.value.push(filter)
-      }
-      else {
-        filterBy.value[objectIndex] = filter
-      }
+      filterByPrice.value = filter
     }
   }
 
   return {
     filteredFlats,
     updateFilter,
-    filterBy,
+    filterByType,
+    filterByPrice,
   }
 }
