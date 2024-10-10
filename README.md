@@ -1,2 +1,2 @@
 # Choose flat section
-![Main](./preview.png)
+![Main](./preview.jpg)
